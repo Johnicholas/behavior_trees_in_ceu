@@ -1,0 +1,5 @@
+main: main.c _ceu_app.c _ceu_app.h ceu_types.h
+	gcc main.c -o main
+
+_ceu_app.c: test.ceu
+	ceu test.ceu
