@@ -22,6 +22,10 @@ class MoveX with
   interface Executor;
   var int distance;
 do
+  finalize with
+    _printf("move x %d canceled\n", this.distance);
+    _cancel_x();
+  end;
   _printf("move x %d starting\n", this.distance);
   _move_x(this.distance);
   await X_DONE;
@@ -33,6 +37,10 @@ class MoveY with
   interface Executor;
   var int distance;
 do
+  finalize with
+    _printf("move y %d canceled\n", this.distance);
+    _cancel_y();
+  end;
   _printf("move y %d starting\n", this.distance);
   _move_y(this.distance);
   await Y_DONE;
@@ -104,10 +112,6 @@ do
       var MoveX right with
         this.distance = 30 - _x();
       end;
-      finalize with
-        _cancel_x(); // TODO: call right.cancel?
-      end
-      
       par/or do
         every TICK do
           if _x() >= 30 then
@@ -132,10 +136,6 @@ do
           var MoveX left with
             this.distance = 30 - _x();
           end;
-          finalize with
-            _cancel_x(); // TODO: call left.cancel?
-          end
-
           par/or do
             every TICK do
               if _x() <= 30 then
@@ -160,9 +160,6 @@ do
               var MoveY down with
                 this.distance = 30 - _y();
               end;
-              finalize with
-                _cancel_y();
-              end
               par/or do
                 every TICK do
                   if _y() >= 30 then
@@ -187,9 +184,6 @@ do
                   var MoveY up with
                     this.distance = 30 - _y();
                   end;
-                  finalize with
-                    _cancel_y();
-                  end
                   par/or do
                     every TICK do
                       if _y() <= 30 then

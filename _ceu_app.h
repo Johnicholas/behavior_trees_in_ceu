@@ -590,13 +590,13 @@ extern void* CEU_SYS_VEC[CEU_SYS_MAX];
 #define CEU_OUT_n 0
       /* CEU_IN_, CEU_OUT_ */
 #define CEU_FUN_assert
-#define CEU_FUN_move_y
-#define CEU_FUN_cancel_x
-#define CEU_FUN_cancel_y
-#define CEU_FUN_move_x
 #define CEU_FUN_printf
-#define CEU_FUN_y
+#define CEU_FUN_cancel_x
+#define CEU_FUN_move_y
+#define CEU_FUN_move_x
 #define CEU_FUN_x
+#define CEU_FUN_y
+#define CEU_FUN_cancel_y
    /* CEU_FUN_ */
 
 

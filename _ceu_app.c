@@ -620,13 +620,13 @@ extern void* CEU_SYS_VEC[CEU_SYS_MAX];
 #define CEU_OUT_n 0
       /* CEU_IN_, CEU_OUT_ */
 #define CEU_FUN_assert
-#define CEU_FUN_move_y
-#define CEU_FUN_cancel_x
-#define CEU_FUN_cancel_y
-#define CEU_FUN_move_x
 #define CEU_FUN_printf
-#define CEU_FUN_y
+#define CEU_FUN_cancel_x
+#define CEU_FUN_move_y
+#define CEU_FUN_move_x
 #define CEU_FUN_x
+#define CEU_FUN_y
+#define CEU_FUN_cancel_y
    /* CEU_FUN_ */
 
 
@@ -3172,13 +3172,18 @@ typedef void CEU_Executor;
 
 typedef struct CEU_MoveX {
   struct tceu_org org;
-  tceu_trl trls_[ 2 ];
+  tceu_trl trls_[ 3 ];
   struct { /* BLOCK ln=21 */
     #line 23 "test.ceu"
 int distance;
     union {
       struct { /* BLOCK ln=25 */
+      u8 __fin_175_1: 1;
         union {
+              struct { /* BLOCK ln=26 */
+                union {
+                };
+              };
         };
       };
     };
@@ -3190,13 +3195,18 @@ int distance;
 
 typedef struct CEU_MoveY {
   struct tceu_org org;
-  tceu_trl trls_[ 2 ];
-  struct { /* BLOCK ln=32 */
-    #line 34 "test.ceu"
+  tceu_trl trls_[ 3 ];
+  struct { /* BLOCK ln=36 */
+    #line 38 "test.ceu"
 int distance;
     union {
-      struct { /* BLOCK ln=36 */
+      struct { /* BLOCK ln=40 */
+      u8 __fin_196_1: 1;
         union {
+              struct { /* BLOCK ln=41 */
+                union {
+                };
+              };
         };
       };
     };
@@ -3209,35 +3219,35 @@ int distance;
 typedef struct CEU_BoxTest {
   struct tceu_org org;
   tceu_trl trls_[ 7 ];
-  struct { /* BLOCK ln=43 */
+  struct { /* BLOCK ln=51 */
     union {
-      struct { /* BLOCK ln=46 */
-        #line 47 "test.ceu"
-CEU_MoveX right;
-      tceu_org_lnk __lnks_238_1[2];
+      struct { /* BLOCK ln=54 */
         #line 55 "test.ceu"
+CEU_MoveX right;
+      tceu_org_lnk __lnks_256_1[2];
+        #line 63 "test.ceu"
 CEU_MoveX left;
-      tceu_org_lnk __lnks_238_3[2];
-        #line 51 "test.ceu"
-CEU_MoveY down;
-      tceu_org_lnk __lnks_238_2[2];
+      tceu_org_lnk __lnks_256_3[2];
         #line 59 "test.ceu"
+CEU_MoveY down;
+      tceu_org_lnk __lnks_256_2[2];
+        #line 67 "test.ceu"
 CEU_MoveY up;
-      tceu_org_lnk __lnks_238_4[2];
+      tceu_org_lnk __lnks_256_4[2];
         union {
-              struct { /* BLOCK ln=48 */
-                union {
-                };
-              };
-              struct { /* BLOCK ln=52 */
-                union {
-                };
-              };
               struct { /* BLOCK ln=56 */
                 union {
                 };
               };
               struct { /* BLOCK ln=60 */
+                union {
+                };
+              };
+              struct { /* BLOCK ln=64 */
+                union {
+                };
+              };
+              struct { /* BLOCK ln=68 */
                 union {
                 };
               };
@@ -3253,61 +3263,61 @@ CEU_MoveY up;
 typedef struct CEU_DiagonalTest {
   struct tceu_org org;
   tceu_trl trls_[ 7 ];
-  struct { /* BLOCK ln=67 */
+  struct { /* BLOCK ln=75 */
     union {
-      struct { /* BLOCK ln=70 */
+      struct { /* BLOCK ln=78 */
         union {
           struct {
-            struct { /* BLOCK ln=72 */
-              #line 72 "test.ceu"
+            struct { /* BLOCK ln=80 */
+              #line 80 "test.ceu"
 CEU_MoveX right_2;
-            tceu_org_lnk __lnks_256_1[2];
+            tceu_org_lnk __lnks_274_1[2];
               union {
-                    struct { /* BLOCK ln=73 */
+                    struct { /* BLOCK ln=81 */
                       union {
                       };
                     };
               };
             };
-            struct { /* BLOCK ln=77 */
-              #line 77 "test.ceu"
+            struct { /* BLOCK ln=85 */
+              #line 85 "test.ceu"
 CEU_MoveY down_3;
-            tceu_org_lnk __lnks_270_4[2];
+            tceu_org_lnk __lnks_288_4[2];
               union {
-                    struct { /* BLOCK ln=78 */
+                    struct { /* BLOCK ln=86 */
                       union {
                       };
                     };
               };
             };
-            u8 __and_271_1: 1;
-            u8 __and_271_2: 1;
+            u8 __and_289_1: 1;
+            u8 __and_289_2: 1;
           };
           struct {
-            struct { /* BLOCK ln=83 */
-              #line 83 "test.ceu"
+            struct { /* BLOCK ln=91 */
+              #line 91 "test.ceu"
 CEU_MoveX left_4;
-            tceu_org_lnk __lnks_286_1[2];
+            tceu_org_lnk __lnks_304_1[2];
               union {
-                    struct { /* BLOCK ln=84 */
+                    struct { /* BLOCK ln=92 */
                       union {
                       };
                     };
               };
             };
-            struct { /* BLOCK ln=88 */
-              #line 88 "test.ceu"
+            struct { /* BLOCK ln=96 */
+              #line 96 "test.ceu"
 CEU_MoveY up_5;
-            tceu_org_lnk __lnks_301_4[2];
+            tceu_org_lnk __lnks_319_4[2];
               union {
-                    struct { /* BLOCK ln=89 */
+                    struct { /* BLOCK ln=97 */
                       union {
                       };
                     };
               };
             };
-            u8 __and_302_1: 1;
-            u8 __and_302_2: 1;
+            u8 __and_320_1: 1;
+            u8 __and_320_2: 1;
           };
         };
       };
@@ -3320,34 +3330,29 @@ CEU_MoveY up_5;
 
 typedef struct CEU_RulesTest {
   struct tceu_org org;
-  tceu_trl trls_[ 9 ];
-  struct { /* BLOCK ln=97 */
+  tceu_trl trls_[ 8 ];
+  struct { /* BLOCK ln=105 */
     union {
-      struct { /* BLOCK ln=100 */
+      struct { /* BLOCK ln=108 */
         union {
-            struct { /* BLOCK ln=102 */
+            struct { /* BLOCK ln=110 */
               union {
-                  struct { /* BLOCK ln=103 */
-                  u8 __fin_360_1: 1;
-                    #line 104 "test.ceu"
+                  struct { /* BLOCK ln=111 */
+                    #line 112 "test.ceu"
 CEU_MoveX right_2;
-                  tceu_org_lnk __lnks_360_1[2];
+                  tceu_org_lnk __lnks_373_1[2];
                     union {
-                          struct { /* BLOCK ln=105 */
-                            union {
-                            };
-                          };
-                          struct { /* BLOCK ln=108 */
+                          struct { /* BLOCK ln=113 */
                             union {
                             };
                           };
                       struct {
-                        struct { /* BLOCK ln=112 */
+                        struct { /* BLOCK ln=116 */
                           union {
                               union {
-                                struct { /* BLOCK ln=113 */
+                                struct { /* BLOCK ln=117 */
                                   union {
-                                      struct { /* BLOCK ln=114 */
+                                      struct { /* BLOCK ln=118 */
                                         union {
                                         };
                                       };
@@ -3356,22 +3361,22 @@ CEU_MoveX right_2;
                               };
                           };
                         };
-                        struct { /* BLOCK ln=119 */
+                        struct { /* BLOCK ln=123 */
                           union {
                           };
                         };
                       };
                     };
                   };
-                  struct { /* BLOCK ln=122 */
+                  struct { /* BLOCK ln=126 */
                     union {
                       struct {
-                        struct { /* BLOCK ln=123 */
+                        struct { /* BLOCK ln=127 */
                           union {
                               union {
-                                struct { /* BLOCK ln=124 */
+                                struct { /* BLOCK ln=128 */
                                   union {
-                                      struct { /* BLOCK ln=125 */
+                                      struct { /* BLOCK ln=129 */
                                         union {
                                         };
                                       };
@@ -3380,19 +3385,14 @@ CEU_MoveX right_2;
                               };
                           };
                         };
-                        struct { /* BLOCK ln=130 */
+                        struct { /* BLOCK ln=134 */
                           union {
-                              struct { /* BLOCK ln=131 */
-                              u8 __fin_424_1: 1;
-                                #line 132 "test.ceu"
+                              struct { /* BLOCK ln=135 */
+                                #line 136 "test.ceu"
 CEU_MoveX left_3;
-                              tceu_org_lnk __lnks_424_2[2];
+                              tceu_org_lnk __lnks_432_2[2];
                                 union {
-                                      struct { /* BLOCK ln=133 */
-                                        union {
-                                        };
-                                      };
-                                      struct { /* BLOCK ln=136 */
+                                      struct { /* BLOCK ln=137 */
                                         union {
                                         };
                                       };
@@ -3438,26 +3438,21 @@ CEU_MoveX left_3;
                                     struct { /* BLOCK ln=158 */
                                       union {
                                           struct { /* BLOCK ln=159 */
-                                          u8 __fin_488_1: 1;
                                             #line 160 "test.ceu"
 CEU_MoveY down_4;
-                                          tceu_org_lnk __lnks_488_3[2];
+                                          tceu_org_lnk __lnks_491_3[2];
                                             union {
                                                   struct { /* BLOCK ln=161 */
                                                     union {
                                                     };
                                                   };
-                                                  struct { /* BLOCK ln=164 */
-                                                    union {
-                                                    };
-                                                  };
                                               struct {
-                                                struct { /* BLOCK ln=167 */
+                                                struct { /* BLOCK ln=164 */
                                                   union {
                                                       union {
-                                                        struct { /* BLOCK ln=168 */
+                                                        struct { /* BLOCK ln=165 */
                                                           union {
-                                                              struct { /* BLOCK ln=169 */
+                                                              struct { /* BLOCK ln=166 */
                                                                 union {
                                                                 };
                                                               };
@@ -3466,22 +3461,22 @@ CEU_MoveY down_4;
                                                       };
                                                   };
                                                 };
-                                                struct { /* BLOCK ln=174 */
+                                                struct { /* BLOCK ln=171 */
                                                   union {
                                                   };
                                                 };
                                               };
                                             };
                                           };
-                                          struct { /* BLOCK ln=177 */
+                                          struct { /* BLOCK ln=174 */
                                             union {
                                               struct {
-                                                struct { /* BLOCK ln=178 */
+                                                struct { /* BLOCK ln=175 */
                                                   union {
                                                       union {
-                                                        struct { /* BLOCK ln=179 */
+                                                        struct { /* BLOCK ln=176 */
                                                           union {
-                                                              struct { /* BLOCK ln=180 */
+                                                              struct { /* BLOCK ln=177 */
                                                                 union {
                                                                 };
                                                               };
@@ -3490,29 +3485,24 @@ CEU_MoveY down_4;
                                                       };
                                                   };
                                                 };
-                                                struct { /* BLOCK ln=185 */
+                                                struct { /* BLOCK ln=182 */
                                                   union {
-                                                      struct { /* BLOCK ln=186 */
-                                                      u8 __fin_552_1: 1;
-                                                        #line 187 "test.ceu"
+                                                      struct { /* BLOCK ln=183 */
+                                                        #line 184 "test.ceu"
 CEU_MoveY up_5;
-                                                      tceu_org_lnk __lnks_552_4[2];
+                                                      tceu_org_lnk __lnks_550_4[2];
                                                         union {
-                                                              struct { /* BLOCK ln=188 */
-                                                                union {
-                                                                };
-                                                              };
-                                                              struct { /* BLOCK ln=191 */
+                                                              struct { /* BLOCK ln=185 */
                                                                 union {
                                                                 };
                                                               };
                                                           struct {
-                                                            struct { /* BLOCK ln=194 */
+                                                            struct { /* BLOCK ln=188 */
                                                               union {
                                                                   union {
-                                                                    struct { /* BLOCK ln=195 */
+                                                                    struct { /* BLOCK ln=189 */
                                                                       union {
-                                                                          struct { /* BLOCK ln=196 */
+                                                                          struct { /* BLOCK ln=190 */
                                                                             union {
                                                                             };
                                                                           };
@@ -3521,14 +3511,14 @@ CEU_MoveY up_5;
                                                                   };
                                                               };
                                                             };
-                                                            struct { /* BLOCK ln=201 */
+                                                            struct { /* BLOCK ln=195 */
                                                               union {
                                                               };
                                                             };
                                                           };
                                                         };
                                                       };
-                                                      struct { /* BLOCK ln=204 */
+                                                      struct { /* BLOCK ln=198 */
                                                         union {
                                                         };
                                                       };
@@ -3567,9 +3557,9 @@ typedef struct CEU_Main {
 int _ret_0;
         union {
             struct { /* BLOCK ln=1 */
-              #line 223 "test.ceu"
+              #line 217 "test.ceu"
 CEU_RulesTest to_test;
-            tceu_org_lnk __lnks_600_1[2];
+            tceu_org_lnk __lnks_598_1[2];
               union {
                 union {
                   union {
@@ -3615,77 +3605,77 @@ CEU_RulesTest to_test;
 enum {
     MoveX_Awake_X_DONE_0 = 0,
     MoveX_EmitInt_cont_1 = 1,
-    Class_MoveX = 2,
-    MoveX_Class_free_MoveX_3 = 3,
-    MoveY_Awake_Y_DONE_4 = 4,
-    MoveY_EmitInt_cont_5 = 5,
-    Class_MoveY = 6,
-    MoveY_Class_free_MoveY_7 = 7,
-    BoxTest_Start_cnt_8 = 8,
-    BoxTest_Awake_ok_9 = 9,
-    BoxTest_Start_cnt_10 = 10,
-    BoxTest_Awake_ok_11 = 11,
-    BoxTest_Start_cnt_12 = 12,
-    BoxTest_Awake_ok_13 = 13,
+    MoveX_Block__fin_2 = 2,
+    MoveX_Block_fin_cnt_3 = 3,
+    MoveX_Clear_4 = 4,
+    Class_MoveX = 5,
+    MoveX_Class_free_MoveX_6 = 6,
+    MoveY_Awake_Y_DONE_7 = 7,
+    MoveY_EmitInt_cont_8 = 8,
+    MoveY_Block__fin_9 = 9,
+    MoveY_Block_fin_cnt_10 = 10,
+    MoveY_Clear_11 = 11,
+    Class_MoveY = 12,
+    MoveY_Class_free_MoveY_13 = 13,
     BoxTest_Start_cnt_14 = 14,
     BoxTest_Awake_ok_15 = 15,
-    BoxTest_EmitInt_cont_16 = 16,
-    BoxTest_Clear_17 = 17,
-    Class_BoxTest = 18,
-    BoxTest_Class_free_BoxTest_19 = 19,
-    DiagonalTest_ParAnd_sub_2_20 = 20,
-    DiagonalTest_ParAnd_chk_21 = 21,
-    DiagonalTest_ParAnd_out_22 = 22,
-    DiagonalTest_Start_cnt_23 = 23,
-    DiagonalTest_Awake_ok_24 = 24,
-    DiagonalTest_Clear_25 = 25,
-    DiagonalTest_Start_cnt_26 = 26,
-    DiagonalTest_Awake_ok_27 = 27,
-    DiagonalTest_Clear_28 = 28,
-    DiagonalTest_ParAnd_sub_2_29 = 29,
-    DiagonalTest_ParAnd_chk_30 = 30,
-    DiagonalTest_ParAnd_out_31 = 31,
+    BoxTest_Start_cnt_16 = 16,
+    BoxTest_Awake_ok_17 = 17,
+    BoxTest_Start_cnt_18 = 18,
+    BoxTest_Awake_ok_19 = 19,
+    BoxTest_Start_cnt_20 = 20,
+    BoxTest_Awake_ok_21 = 21,
+    BoxTest_EmitInt_cont_22 = 22,
+    BoxTest_Clear_23 = 23,
+    Class_BoxTest = 24,
+    BoxTest_Class_free_BoxTest_25 = 25,
+    DiagonalTest_ParAnd_sub_2_26 = 26,
+    DiagonalTest_ParAnd_chk_27 = 27,
+    DiagonalTest_ParAnd_out_28 = 28,
+    DiagonalTest_Start_cnt_29 = 29,
+    DiagonalTest_Awake_ok_30 = 30,
+    DiagonalTest_Clear_31 = 31,
     DiagonalTest_Start_cnt_32 = 32,
     DiagonalTest_Awake_ok_33 = 33,
     DiagonalTest_Clear_34 = 34,
-    DiagonalTest_Start_cnt_35 = 35,
-    DiagonalTest_Awake_ok_36 = 36,
-    DiagonalTest_Clear_37 = 37,
-    DiagonalTest_EmitInt_cont_38 = 38,
-    Class_DiagonalTest = 39,
-    DiagonalTest_Class_free_DiagonalTest_40 = 40,
-    RulesTest_Start_cnt_41 = 41,
-    RulesTest_ParOr_sub_2_42 = 42,
-    RulesTest_ParOr_out_43 = 43,
-    RulesTest_Awake_TICK_44 = 44,
-    RulesTest_Awake_ok_45 = 45,
-    RulesTest_Clear_46 = 46,
-    RulesTest_Block__fin_47 = 47,
-    RulesTest_Block_fin_cnt_48 = 48,
-    RulesTest_Clear_49 = 49,
-    RulesTest_ParOr_sub_2_50 = 50,
-    RulesTest_ParOr_out_51 = 51,
-    RulesTest_Awake_TICK_52 = 52,
-    RulesTest_Start_cnt_53 = 53,
+    DiagonalTest_ParAnd_sub_2_35 = 35,
+    DiagonalTest_ParAnd_chk_36 = 36,
+    DiagonalTest_ParAnd_out_37 = 37,
+    DiagonalTest_Start_cnt_38 = 38,
+    DiagonalTest_Awake_ok_39 = 39,
+    DiagonalTest_Clear_40 = 40,
+    DiagonalTest_Start_cnt_41 = 41,
+    DiagonalTest_Awake_ok_42 = 42,
+    DiagonalTest_Clear_43 = 43,
+    DiagonalTest_EmitInt_cont_44 = 44,
+    Class_DiagonalTest = 45,
+    DiagonalTest_Class_free_DiagonalTest_46 = 46,
+    RulesTest_Start_cnt_47 = 47,
+    RulesTest_ParOr_sub_2_48 = 48,
+    RulesTest_ParOr_out_49 = 49,
+    RulesTest_Awake_TICK_50 = 50,
+    RulesTest_Awake_ok_51 = 51,
+    RulesTest_Clear_52 = 52,
+    RulesTest_Clear_53 = 53,
     RulesTest_ParOr_sub_2_54 = 54,
     RulesTest_ParOr_out_55 = 55,
     RulesTest_Awake_TICK_56 = 56,
-    RulesTest_Awake_ok_57 = 57,
-    RulesTest_Clear_58 = 58,
-    RulesTest_Block__fin_59 = 59,
-    RulesTest_Block_fin_cnt_60 = 60,
-    RulesTest_Clear_61 = 61,
-    RulesTest_ParOr_sub_2_62 = 62,
-    RulesTest_ParOr_out_63 = 63,
-    RulesTest_Awake_TICK_64 = 64,
-    RulesTest_Start_cnt_65 = 65,
-    RulesTest_ParOr_sub_2_66 = 66,
-    RulesTest_ParOr_out_67 = 67,
-    RulesTest_Awake_TICK_68 = 68,
-    RulesTest_Awake_ok_69 = 69,
-    RulesTest_Clear_70 = 70,
-    RulesTest_Block__fin_71 = 71,
-    RulesTest_Block_fin_cnt_72 = 72,
+    RulesTest_Start_cnt_57 = 57,
+    RulesTest_ParOr_sub_2_58 = 58,
+    RulesTest_ParOr_out_59 = 59,
+    RulesTest_Awake_TICK_60 = 60,
+    RulesTest_Awake_ok_61 = 61,
+    RulesTest_Clear_62 = 62,
+    RulesTest_Clear_63 = 63,
+    RulesTest_ParOr_sub_2_64 = 64,
+    RulesTest_ParOr_out_65 = 65,
+    RulesTest_Awake_TICK_66 = 66,
+    RulesTest_Start_cnt_67 = 67,
+    RulesTest_ParOr_sub_2_68 = 68,
+    RulesTest_ParOr_out_69 = 69,
+    RulesTest_Awake_TICK_70 = 70,
+    RulesTest_Awake_ok_71 = 71,
+    RulesTest_Clear_72 = 72,
     RulesTest_Clear_73 = 73,
     RulesTest_ParOr_sub_2_74 = 74,
     RulesTest_ParOr_out_75 = 75,
@@ -3696,24 +3686,22 @@ enum {
     RulesTest_Awake_TICK_80 = 80,
     RulesTest_Awake_ok_81 = 81,
     RulesTest_Clear_82 = 82,
-    RulesTest_Block__fin_83 = 83,
-    RulesTest_Block_fin_cnt_84 = 84,
+    RulesTest_Clear_83 = 83,
+    RulesTest_Clear_84 = 84,
     RulesTest_Clear_85 = 85,
     RulesTest_Clear_86 = 86,
     RulesTest_Clear_87 = 87,
-    RulesTest_Clear_88 = 88,
-    RulesTest_Clear_89 = 89,
-    RulesTest_EmitInt_cont_90 = 90,
-    Class_RulesTest = 91,
-    RulesTest_Class_free_RulesTest_92 = 92,
-    Main_Set_out_93 = 93,
-    Main_Awake_START_94 = 94,
-    Main_Start_cnt_95 = 95,
-    Main_Awake_ok_96 = 96,
-    Main_Clear_97 = 97,
-    Main_Clear_98 = 98,
-    Class_Main = 99,
-    Main_Class_free_Main_100 = 100,
+    RulesTest_EmitInt_cont_88 = 88,
+    Class_RulesTest = 89,
+    RulesTest_Class_free_RulesTest_90 = 90,
+    Main_Set_out_91 = 91,
+    Main_Awake_START_92 = 92,
+    Main_Start_cnt_93 = 93,
+    Main_Awake_ok_94 = 94,
+    Main_Clear_95 = 95,
+    Main_Clear_96 = 96,
+    Class_Main = 97,
+    Main_Class_free_Main_98 = 98,
 
 };
 
@@ -3814,70 +3802,20 @@ static void ceu_stack_clr () {
 #endif
 
 #ifdef CEU_ORGS
-static void _ceu_constr_190 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 190 */
-/* NODE: Block 189 */
+static void _ceu_constr_208 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 208 */
+/* NODE: Block 207 */
 
-#line 48 "test.ceu"
-    {/* NODE: Stmts 188 */
+#line 56 "test.ceu"
+    {/* NODE: Stmts 206 */
 
-#line 48 "test.ceu"
-    {/* NODE: SetExp 660 */
+#line 56 "test.ceu"
+    {/* NODE: SetExp 658 */
 
-#line 48 "test.ceu"
+#line 56 "test.ceu"
 /* SET: . */
-#line 48 "test.ceu"
+#line 56 "test.ceu"
     ((CEU_MoveX*)__ceu_org)->distance = 10;
-#line 48 "test.ceu"
-    }
-#line 48 "test.ceu"
-/* CLEAR: Block (48) */
-#line 48 "test.ceu"
-    }
-#line 48 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
-}
-static void _ceu_constr_202 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 202 */
-/* NODE: Block 201 */
-
-#line 52 "test.ceu"
-    {/* NODE: Stmts 200 */
-
-#line 52 "test.ceu"
-    {/* NODE: SetExp 661 */
-
-#line 52 "test.ceu"
-/* SET: . */
-#line 52 "test.ceu"
-    ((CEU_MoveY*)__ceu_org)->distance = 10;
-#line 52 "test.ceu"
-    }
-#line 52 "test.ceu"
-/* CLEAR: Block (52) */
-#line 52 "test.ceu"
-    }
-#line 52 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
-}
-static void _ceu_constr_215 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 215 */
-/* NODE: Block 214 */
-
-#line 56 "test.ceu"
-    {/* NODE: Stmts 213 */
-
-#line 56 "test.ceu"
-    {/* NODE: SetExp 662 */
-
-#line 56 "test.ceu"
-/* SET: . */
-#line 56 "test.ceu"
-    ((CEU_MoveX*)__ceu_org)->distance = (-10);
 #line 56 "test.ceu"
     }
 #line 56 "test.ceu"
@@ -3889,20 +3827,20 @@ static void _ceu_constr_215 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
 }
-static void _ceu_constr_228 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 228 */
-/* NODE: Block 227 */
+static void _ceu_constr_220 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 220 */
+/* NODE: Block 219 */
 
 #line 60 "test.ceu"
-    {/* NODE: Stmts 226 */
+    {/* NODE: Stmts 218 */
 
 #line 60 "test.ceu"
-    {/* NODE: SetExp 663 */
+    {/* NODE: SetExp 659 */
 
 #line 60 "test.ceu"
 /* SET: . */
 #line 60 "test.ceu"
-    ((CEU_MoveY*)__ceu_org)->distance = (-10);
+    ((CEU_MoveY*)__ceu_org)->distance = 10;
 #line 60 "test.ceu"
     }
 #line 60 "test.ceu"
@@ -3914,165 +3852,215 @@ static void _ceu_constr_228 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
 }
-static void _ceu_constr_250 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 250 */
-/* NODE: Block 249 */
+static void _ceu_constr_233 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 233 */
+/* NODE: Block 232 */
 
-#line 73 "test.ceu"
-    {/* NODE: Stmts 248 */
+#line 64 "test.ceu"
+    {/* NODE: Stmts 231 */
 
-#line 73 "test.ceu"
+#line 64 "test.ceu"
+    {/* NODE: SetExp 660 */
+
+#line 64 "test.ceu"
+/* SET: . */
+#line 64 "test.ceu"
+    ((CEU_MoveX*)__ceu_org)->distance = (-10);
+#line 64 "test.ceu"
+    }
+#line 64 "test.ceu"
+/* CLEAR: Block (64) */
+#line 64 "test.ceu"
+    }
+#line 64 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
+}
+static void _ceu_constr_246 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 246 */
+/* NODE: Block 245 */
+
+#line 68 "test.ceu"
+    {/* NODE: Stmts 244 */
+
+#line 68 "test.ceu"
+    {/* NODE: SetExp 661 */
+
+#line 68 "test.ceu"
+/* SET: . */
+#line 68 "test.ceu"
+    ((CEU_MoveY*)__ceu_org)->distance = (-10);
+#line 68 "test.ceu"
+    }
+#line 68 "test.ceu"
+/* CLEAR: Block (68) */
+#line 68 "test.ceu"
+    }
+#line 68 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
+}
+static void _ceu_constr_268 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 268 */
+/* NODE: Block 267 */
+
+#line 81 "test.ceu"
+    {/* NODE: Stmts 266 */
+
+#line 81 "test.ceu"
+    {/* NODE: SetExp 667 */
+
+#line 81 "test.ceu"
+/* SET: . */
+#line 81 "test.ceu"
+    ((CEU_MoveX*)__ceu_org)->distance = 20;
+#line 81 "test.ceu"
+    }
+#line 81 "test.ceu"
+/* CLEAR: Block (81) */
+#line 81 "test.ceu"
+    }
+#line 81 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
+}
+static void _ceu_constr_282 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 282 */
+/* NODE: Block 281 */
+
+#line 86 "test.ceu"
+    {/* NODE: Stmts 280 */
+
+#line 86 "test.ceu"
+    {/* NODE: SetExp 668 */
+
+#line 86 "test.ceu"
+/* SET: . */
+#line 86 "test.ceu"
+    ((CEU_MoveY*)__ceu_org)->distance = 20;
+#line 86 "test.ceu"
+    }
+#line 86 "test.ceu"
+/* CLEAR: Block (86) */
+#line 86 "test.ceu"
+    }
+#line 86 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
+}
+static void _ceu_constr_298 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 298 */
+/* NODE: Block 297 */
+
+#line 92 "test.ceu"
+    {/* NODE: Stmts 296 */
+
+#line 92 "test.ceu"
     {/* NODE: SetExp 669 */
 
-#line 73 "test.ceu"
+#line 92 "test.ceu"
 /* SET: . */
-#line 73 "test.ceu"
-    ((CEU_MoveX*)__ceu_org)->distance = 20;
-#line 73 "test.ceu"
+#line 92 "test.ceu"
+    ((CEU_MoveX*)__ceu_org)->distance = (-20);
+#line 92 "test.ceu"
     }
-#line 73 "test.ceu"
-/* CLEAR: Block (73) */
-#line 73 "test.ceu"
+#line 92 "test.ceu"
+/* CLEAR: Block (92) */
+#line 92 "test.ceu"
     }
-#line 73 "test.ceu"
+#line 92 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
 }
-static void _ceu_constr_264 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 264 */
-/* NODE: Block 263 */
+static void _ceu_constr_313 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 313 */
+/* NODE: Block 312 */
 
-#line 78 "test.ceu"
-    {/* NODE: Stmts 262 */
+#line 97 "test.ceu"
+    {/* NODE: Stmts 311 */
 
-#line 78 "test.ceu"
+#line 97 "test.ceu"
     {/* NODE: SetExp 670 */
 
-#line 78 "test.ceu"
+#line 97 "test.ceu"
 /* SET: . */
-#line 78 "test.ceu"
-    ((CEU_MoveY*)__ceu_org)->distance = 20;
-#line 78 "test.ceu"
-    }
-#line 78 "test.ceu"
-/* CLEAR: Block (78) */
-#line 78 "test.ceu"
-    }
-#line 78 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
-}
-static void _ceu_constr_280 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 280 */
-/* NODE: Block 279 */
-
-#line 84 "test.ceu"
-    {/* NODE: Stmts 278 */
-
-#line 84 "test.ceu"
-    {/* NODE: SetExp 671 */
-
-#line 84 "test.ceu"
-/* SET: . */
-#line 84 "test.ceu"
-    ((CEU_MoveX*)__ceu_org)->distance = (-20);
-#line 84 "test.ceu"
-    }
-#line 84 "test.ceu"
-/* CLEAR: Block (84) */
-#line 84 "test.ceu"
-    }
-#line 84 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
-}
-static void _ceu_constr_295 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 295 */
-/* NODE: Block 294 */
-
-#line 89 "test.ceu"
-    {/* NODE: Stmts 293 */
-
-#line 89 "test.ceu"
-    {/* NODE: SetExp 672 */
-
-#line 89 "test.ceu"
-/* SET: . */
-#line 89 "test.ceu"
+#line 97 "test.ceu"
     ((CEU_MoveY*)__ceu_org)->distance = (-20);
-#line 89 "test.ceu"
+#line 97 "test.ceu"
     }
-#line 89 "test.ceu"
-/* CLEAR: Block (89) */
-#line 89 "test.ceu"
+#line 97 "test.ceu"
+/* CLEAR: Block (97) */
+#line 97 "test.ceu"
     }
-#line 89 "test.ceu"
+#line 97 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
 }
-static void _ceu_constr_330 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 330 */
-/* NODE: Block 329 */
+static void _ceu_constr_348 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 348 */
+/* NODE: Block 347 */
 
-#line 105 "test.ceu"
-    {/* NODE: Stmts 328 */
+#line 113 "test.ceu"
+    {/* NODE: Stmts 346 */
 
-#line 105 "test.ceu"
-    {/* NODE: SetExp 679 */
+#line 113 "test.ceu"
+    {/* NODE: SetExp 677 */
 
-#line 105 "test.ceu"
+#line 113 "test.ceu"
 /* SET: . */
-#line 105 "test.ceu"
+#line 113 "test.ceu"
     ((CEU_MoveX*)__ceu_org)->distance = (30-x());
-#line 105 "test.ceu"
+#line 113 "test.ceu"
     }
-#line 105 "test.ceu"
-/* CLEAR: Block (105) */
-#line 105 "test.ceu"
+#line 113 "test.ceu"
+/* CLEAR: Block (113) */
+#line 113 "test.ceu"
     }
-#line 105 "test.ceu"
+#line 113 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
 }
-static void _ceu_constr_394 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 394 */
-/* NODE: Block 393 */
+static void _ceu_constr_407 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 407 */
+/* NODE: Block 406 */
 
-#line 133 "test.ceu"
-    {/* NODE: Stmts 392 */
+#line 137 "test.ceu"
+    {/* NODE: Stmts 405 */
 
-#line 133 "test.ceu"
-    {/* NODE: SetExp 690 */
+#line 137 "test.ceu"
+    {/* NODE: SetExp 688 */
 
-#line 133 "test.ceu"
+#line 137 "test.ceu"
 /* SET: . */
-#line 133 "test.ceu"
+#line 137 "test.ceu"
     ((CEU_MoveX*)__ceu_org)->distance = (30-x());
-#line 133 "test.ceu"
+#line 137 "test.ceu"
     }
-#line 133 "test.ceu"
-/* CLEAR: Block (133) */
-#line 133 "test.ceu"
+#line 137 "test.ceu"
+/* CLEAR: Block (137) */
+#line 137 "test.ceu"
     }
-#line 133 "test.ceu"
+#line 137 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
 }
-static void _ceu_constr_458 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 458 */
-/* NODE: Block 457 */
+static void _ceu_constr_466 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 466 */
+/* NODE: Block 465 */
 
 #line 161 "test.ceu"
-    {/* NODE: Stmts 456 */
+    {/* NODE: Stmts 464 */
 
 #line 161 "test.ceu"
-    {/* NODE: SetExp 701 */
+    {/* NODE: SetExp 699 */
 
 #line 161 "test.ceu"
 /* SET: . */
@@ -4089,27 +4077,27 @@ static void _ceu_constr_458 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 4 ]; */
 }
-static void _ceu_constr_522 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
-/* NODE: Dcl_constr 522 */
-/* NODE: Block 521 */
+static void _ceu_constr_525 (tceu_app* _ceu_app, tceu_org* __ceu_org, tceu_go* _ceu_go) {
+/* NODE: Dcl_constr 525 */
+/* NODE: Block 524 */
 
-#line 188 "test.ceu"
-    {/* NODE: Stmts 520 */
+#line 185 "test.ceu"
+    {/* NODE: Stmts 523 */
 
-#line 188 "test.ceu"
-    {/* NODE: SetExp 712 */
+#line 185 "test.ceu"
+    {/* NODE: SetExp 710 */
 
-#line 188 "test.ceu"
+#line 185 "test.ceu"
 /* SET: . */
-#line 188 "test.ceu"
+#line 185 "test.ceu"
     ((CEU_MoveY*)__ceu_org)->distance = (30-y());
-#line 188 "test.ceu"
+#line 185 "test.ceu"
     }
-#line 188 "test.ceu"
-/* CLEAR: Block (188) */
-#line 188 "test.ceu"
+#line 185 "test.ceu"
+/* CLEAR: Block (185) */
+#line 185 "test.ceu"
     }
-#line 188 "test.ceu"
+#line 185 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
@@ -4171,7 +4159,7 @@ fprintf(stderr, "TRK: o.%p / l.%d\n", _ceu_go->org, _ceu_go->lbl);
 #endif
 
     switch (_ceu_go->lbl) {
-        /* NODE: Root 750 */
+        /* NODE: Root 748 */
 /* NODE: Dcl_cls 0 */
 
 #line 21 "test.ceu"
@@ -4180,47 +4168,58 @@ case Class_MoveX:;
     #ifdef CEU_IFCS
 _ceu_go->org->cls = 0;
 #endif
-/* NODE: Block 649 */
+/* NODE: Block 647 */
 
 #line 21 "test.ceu"
-    {/* NODE: Stmts 648 */
+    {/* NODE: Stmts 646 */
 
 #line 21 "test.ceu"
-    {/* NODE: Block 163 */
+    {/* NODE: Block 175 */
 
 #line 25 "test.ceu"
-    {/* NODE: Stmts 162 */
+    /*  FINALIZE */
+_ceu_go->org->trls[ 1 ].evt   = CEU_IN__CLEAR;
+_ceu_go->org->trls[ 1 ].lbl   = MoveX_Block__fin_2;
+_ceu_go->org->trls[ 1 ].seqno = _ceu_app->seqno-1; /* awake now */
 
 #line 25 "test.ceu"
-    {/* NODE: CallStmt 154 */
+    ((CEU_MoveX*)_ceu_go->org)->__fin_175_1 = 0;
+#line 25 "test.ceu"
+    {/* NODE: Stmts 174 */
 
 #line 25 "test.ceu"
-    printf("move x %d starting\n",((CEU_MoveX*)_ceu_go->org)->distance);/* NODE: CallStmt 155 */
+    {/* NODE: Finalize 165 */
 
-#line 26 "test.ceu"
-    move_x(((CEU_MoveX*)_ceu_go->org)->distance);/* NODE: AwaitExt 157 */
+#line 25 "test.ceu"
+    ((CEU_MoveX*)_ceu_go->org)->__fin_175_1 = 1;/* NODE: CallStmt 166 */
 
-#line 27 "test.ceu"
+#line 29 "test.ceu"
+    printf("move x %d starting\n",((CEU_MoveX*)_ceu_go->org)->distance);/* NODE: CallStmt 167 */
+
+#line 30 "test.ceu"
+    move_x(((CEU_MoveX*)_ceu_go->org)->distance);/* NODE: AwaitExt 169 */
+
+#line 31 "test.ceu"
         _ceu_go->trl->evt = CEU_IN_X_DONE;
     _ceu_go->trl->lbl = MoveX_Awake_X_DONE_0;
 
-#line 27 "test.ceu"
+#line 31 "test.ceu"
     	return RET_HALT;
-#line 27 "test.ceu"
+#line 31 "test.ceu"
     case MoveX_Awake_X_DONE_0:;
 
-#line 27 "test.ceu"
+#line 31 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: CallStmt 158 */
+/* NODE: CallStmt 170 */
 
-#line 28 "test.ceu"
-    printf("move x %d done\n",((CEU_MoveX*)_ceu_go->org)->distance);/* NODE: EmitInt 161 */
+#line 32 "test.ceu"
+    printf("move x %d done\n",((CEU_MoveX*)_ceu_go->org)->distance);/* NODE: EmitInt 173 */
 
-#line 29 "test.ceu"
+#line 33 "test.ceu"
     _ceu_go->stk[_ceu_go->stki].evtp = _ceu_go->evtp;
 #ifdef CEU_INTS
 #ifdef CEU_ORGS
@@ -4239,7 +4238,7 @@ _ceu_go->evt  = 2;
 _ceu_go->evto = (tceu_org*) ((CEU_MoveX*)_ceu_go->org);
 #endif
 
-#line 29 "test.ceu"
+#line 33 "test.ceu"
     #ifdef CEU_ORGS
 _ceu_go->org = _ceu_app->data;   /* TODO(speed): check if is_ifc */
 #endif
@@ -4251,7 +4250,58 @@ case MoveX_EmitInt_cont_1:;
 #line 25 "test.ceu"
     }
 #line 25 "test.ceu"
+    _ceu_go->lbl = MoveX_Block_fin_cnt_3;
+goto _CEU_GOTO_;
+/*return RET_GOTO;*/
+
+#line 25 "test.ceu"
+case MoveX_Block__fin_2:;
+#line 25 "test.ceu"
+    if (((CEU_MoveX*)_ceu_go->org)->__fin_175_1) {
+/* NODE: Finally 164 */
+/* NODE: Block 163 */
+
+#line 26 "test.ceu"
+    {/* NODE: Stmts 162 */
+
+#line 26 "test.ceu"
+    {/* NODE: CallStmt 160 */
+
+#line 26 "test.ceu"
+    printf("move x %d canceled\n",((CEU_MoveX*)_ceu_go->org)->distance);/* NODE: CallStmt 161 */
+
+#line 27 "test.ceu"
+    cancel_x();
+#line 26 "test.ceu"
+    }
+#line 26 "test.ceu"
+/* CLEAR: Block (26) */
+#line 26 "test.ceu"
+    }
+#line 26 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
+}
+
+#line 25 "test.ceu"
+    	return RET_HALT;
+#line 25 "test.ceu"
+case MoveX_Block_fin_cnt_3:;
+#line 25 "test.ceu"
 /* CLEAR: Block (25) */
+#line 25 "test.ceu"
+    /* trails[1] points to ORG blk */
+{
+    tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
+    trl->evt = CEU_IN__STK;
+    trl->stk = _ceu_go->stki;
+    trl->lbl = MoveX_Clear_4;
+}
+return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 2 ]);
+
+case MoveX_Clear_4:;
+
 #line 25 "test.ceu"
     }
 #line 25 "test.ceu"
@@ -4281,53 +4331,64 @@ if (_ceu_go->org->isDyn) {
 #line 21 "test.ceu"
     	return RET_HALT;/* NODE: Dcl_cls 1 */
 
-#line 32 "test.ceu"
+#line 36 "test.ceu"
 case Class_MoveY:;
-#line 32 "test.ceu"
+#line 36 "test.ceu"
     #ifdef CEU_IFCS
 _ceu_go->org->cls = 1;
 #endif
-/* NODE: Block 656 */
-
-#line 32 "test.ceu"
-    {/* NODE: Stmts 655 */
-
-#line 32 "test.ceu"
-    {/* NODE: Block 178 */
+/* NODE: Block 654 */
 
 #line 36 "test.ceu"
-    {/* NODE: Stmts 177 */
+    {/* NODE: Stmts 653 */
 
 #line 36 "test.ceu"
-    {/* NODE: CallStmt 169 */
+    {/* NODE: Block 196 */
 
-#line 36 "test.ceu"
-    printf("move y %d starting\n",((CEU_MoveY*)_ceu_go->org)->distance);/* NODE: CallStmt 170 */
+#line 40 "test.ceu"
+    /*  FINALIZE */
+_ceu_go->org->trls[ 1 ].evt   = CEU_IN__CLEAR;
+_ceu_go->org->trls[ 1 ].lbl   = MoveY_Block__fin_9;
+_ceu_go->org->trls[ 1 ].seqno = _ceu_app->seqno-1; /* awake now */
 
-#line 37 "test.ceu"
-    move_y(((CEU_MoveY*)_ceu_go->org)->distance);/* NODE: AwaitExt 172 */
+#line 40 "test.ceu"
+    ((CEU_MoveY*)_ceu_go->org)->__fin_196_1 = 0;
+#line 40 "test.ceu"
+    {/* NODE: Stmts 195 */
 
-#line 38 "test.ceu"
+#line 40 "test.ceu"
+    {/* NODE: Finalize 186 */
+
+#line 40 "test.ceu"
+    ((CEU_MoveY*)_ceu_go->org)->__fin_196_1 = 1;/* NODE: CallStmt 187 */
+
+#line 44 "test.ceu"
+    printf("move y %d starting\n",((CEU_MoveY*)_ceu_go->org)->distance);/* NODE: CallStmt 188 */
+
+#line 45 "test.ceu"
+    move_y(((CEU_MoveY*)_ceu_go->org)->distance);/* NODE: AwaitExt 190 */
+
+#line 46 "test.ceu"
         _ceu_go->trl->evt = CEU_IN_Y_DONE;
-    _ceu_go->trl->lbl = MoveY_Awake_Y_DONE_4;
+    _ceu_go->trl->lbl = MoveY_Awake_Y_DONE_7;
 
-#line 38 "test.ceu"
+#line 46 "test.ceu"
     	return RET_HALT;
-#line 38 "test.ceu"
-    case MoveY_Awake_Y_DONE_4:;
+#line 46 "test.ceu"
+    case MoveY_Awake_Y_DONE_7:;
 
-#line 38 "test.ceu"
+#line 46 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: CallStmt 173 */
+/* NODE: CallStmt 191 */
 
-#line 39 "test.ceu"
-    printf("move y %d done\n",((CEU_MoveY*)_ceu_go->org)->distance);/* NODE: EmitInt 176 */
+#line 47 "test.ceu"
+    printf("move y %d done\n",((CEU_MoveY*)_ceu_go->org)->distance);/* NODE: EmitInt 194 */
 
-#line 40 "test.ceu"
+#line 48 "test.ceu"
     _ceu_go->stk[_ceu_go->stki].evtp = _ceu_go->evtp;
 #ifdef CEU_INTS
 #ifdef CEU_ORGS
@@ -4338,7 +4399,7 @@ _ceu_go->stk[_ceu_go->stki].evt  = _ceu_go->evt;    /* 3rd (stk) other trails */
 
 _ceu_go->trl->evt = CEU_IN__STK;
 _ceu_go->trl->stk = _ceu_go->stki++;                /* 2nd (stk) me */
-_ceu_go->trl->lbl = MoveY_EmitInt_cont_5;
+_ceu_go->trl->lbl = MoveY_EmitInt_cont_8;
                                             /* 1st (stk+1) my lsts */
 /* TRIGGER EVENT */
 _ceu_go->evt  = 2;
@@ -4346,14 +4407,76 @@ _ceu_go->evt  = 2;
 _ceu_go->evto = (tceu_org*) ((CEU_MoveY*)_ceu_go->org);
 #endif
 
-#line 40 "test.ceu"
+#line 48 "test.ceu"
     #ifdef CEU_ORGS
 _ceu_go->org = _ceu_app->data;   /* TODO(speed): check if is_ifc */
 #endif
 /*goto _CEU_CALL_ORG_;*/
 return RET_ORG;
 
-case MoveY_EmitInt_cont_5:;
+case MoveY_EmitInt_cont_8:;
+
+#line 40 "test.ceu"
+    }
+#line 40 "test.ceu"
+    _ceu_go->lbl = MoveY_Block_fin_cnt_10;
+goto _CEU_GOTO_;
+/*return RET_GOTO;*/
+
+#line 40 "test.ceu"
+case MoveY_Block__fin_9:;
+#line 40 "test.ceu"
+    if (((CEU_MoveY*)_ceu_go->org)->__fin_196_1) {
+/* NODE: Finally 185 */
+/* NODE: Block 184 */
+
+#line 41 "test.ceu"
+    {/* NODE: Stmts 183 */
+
+#line 41 "test.ceu"
+    {/* NODE: CallStmt 181 */
+
+#line 41 "test.ceu"
+    printf("move y %d canceled\n",((CEU_MoveY*)_ceu_go->org)->distance);/* NODE: CallStmt 182 */
+
+#line 42 "test.ceu"
+    cancel_y();
+#line 41 "test.ceu"
+    }
+#line 41 "test.ceu"
+/* CLEAR: Block (41) */
+#line 41 "test.ceu"
+    }
+#line 41 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
+}
+
+#line 40 "test.ceu"
+    	return RET_HALT;
+#line 40 "test.ceu"
+case MoveY_Block_fin_cnt_10:;
+#line 40 "test.ceu"
+/* CLEAR: Block (40) */
+#line 40 "test.ceu"
+    /* trails[1] points to ORG blk */
+{
+    tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
+    trl->evt = CEU_IN__STK;
+    trl->stk = _ceu_go->stki;
+    trl->lbl = MoveY_Clear_11;
+}
+return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 2 ]);
+
+case MoveY_Clear_11:;
+
+#line 40 "test.ceu"
+    }
+#line 40 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
 #line 36 "test.ceu"
     }
@@ -4366,18 +4489,7 @@ case MoveY_EmitInt_cont_5:;
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 32 "test.ceu"
-    }
-#line 32 "test.ceu"
-/* CLEAR: Block (32) */
-#line 32 "test.ceu"
-    }
-#line 32 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
-
-#line 32 "test.ceu"
+#line 36 "test.ceu"
     #ifdef CEU_NEWS
 if (_ceu_go->org->isDyn) {
     _ceu_go->org->isAlive = 0;
@@ -4385,61 +4497,61 @@ if (_ceu_go->org->isDyn) {
 }
 #endif
 
-#line 32 "test.ceu"
+#line 36 "test.ceu"
     	return RET_HALT;/* NODE: Dcl_cls 2 */
 
-#line 43 "test.ceu"
+#line 51 "test.ceu"
 case Class_BoxTest:;
-#line 43 "test.ceu"
+#line 51 "test.ceu"
     #ifdef CEU_IFCS
 _ceu_go->org->cls = 2;
 #endif
-/* NODE: Block 665 */
+/* NODE: Block 663 */
 
-#line 43 "test.ceu"
-    {/* NODE: Stmts 664 */
+#line 51 "test.ceu"
+    {/* NODE: Stmts 662 */
 
-#line 43 "test.ceu"
-    {/* NODE: Block 238 */
+#line 51 "test.ceu"
+    {/* NODE: Block 256 */
 
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     {
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_BoxTest*)_ceu_go->org)->__lnks_238_1);
+ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_BoxTest*)_ceu_go->org)->__lnks_256_1);
 
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 2, (tceu_org_lnk*) &((CEU_BoxTest*)_ceu_go->org)->__lnks_238_2);
+ceu_out_org_trail(_ceu_go->org, 2, (tceu_org_lnk*) &((CEU_BoxTest*)_ceu_go->org)->__lnks_256_2);
 
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 3, (tceu_org_lnk*) &((CEU_BoxTest*)_ceu_go->org)->__lnks_238_3);
+ceu_out_org_trail(_ceu_go->org, 3, (tceu_org_lnk*) &((CEU_BoxTest*)_ceu_go->org)->__lnks_256_3);
 
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 4, (tceu_org_lnk*) &((CEU_BoxTest*)_ceu_go->org)->__lnks_238_4);
+ceu_out_org_trail(_ceu_go->org, 4, (tceu_org_lnk*) &((CEU_BoxTest*)_ceu_go->org)->__lnks_256_4);
 
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     /* switch to blk trail */
 _ceu_go->trl = &_ceu_go->org->trls[ 5 ];
-/* NODE: Stmts 237 */
+/* NODE: Stmts 255 */
 
-#line 46 "test.ceu"
-    {/* NODE: CallStmt 182 */
+#line 54 "test.ceu"
+    {/* NODE: CallStmt 200 */
 
-#line 46 "test.ceu"
-    printf("boxtest starting\n");/* NODE: Dcl_var 191 */
+#line 54 "test.ceu"
+    printf("boxtest starting\n");/* NODE: Dcl_var 209 */
 
-#line 47 "test.ceu"
+#line 55 "test.ceu"
 /* start org: right */
-#line 47 "test.ceu"
+#line 55 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->right)),2,Class_MoveX,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->right)),3,Class_MoveX,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -4449,54 +4561,54 @@ _ceu_go->org, 1);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 47 "test.ceu"
-            _ceu_constr_190(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->right)), _ceu_go);
+#line 55 "test.ceu"
+            _ceu_constr_208(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->right)), _ceu_go);
 
-#line 47 "test.ceu"
+#line 55 "test.ceu"
         }
 }
 
-#line 47 "test.ceu"
+#line 55 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, BoxTest_Start_cnt_8,((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->right)),Class_MoveX);
-case BoxTest_Start_cnt_8:;
-/* NODE: AwaitInt 194 */
+    return ceu_out_org_spawn(_ceu_go, BoxTest_Start_cnt_14,((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->right)),Class_MoveX);
+case BoxTest_Start_cnt_14:;
+/* NODE: AwaitInt 212 */
 
-#line 50 "test.ceu"
-    _CEU_NO_194_:
+#line 58 "test.ceu"
+    _CEU_NO_212_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = BoxTest_Awake_ok_9;
+    _ceu_go->trl->lbl = BoxTest_Awake_ok_15;
 
-#line 50 "test.ceu"
+#line 58 "test.ceu"
     	return RET_HALT;
-#line 50 "test.ceu"
-    case BoxTest_Awake_ok_9:;
+#line 58 "test.ceu"
+    case BoxTest_Awake_ok_15:;
 
-#line 50 "test.ceu"
+#line 58 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_BoxTest*)_ceu_go->org)->right) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_194_;
+        goto _CEU_NO_212_;
     }
 #endif
 
-#line 50 "test.ceu"
+#line 58 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Dcl_var 203 */
+/* NODE: Dcl_var 221 */
 
-#line 51 "test.ceu"
+#line 59 "test.ceu"
 /* start org: down */
-#line 51 "test.ceu"
+#line 59 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->down)),2,Class_MoveY,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->down)),3,Class_MoveY,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -4506,54 +4618,54 @@ _ceu_go->org, 2);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 51 "test.ceu"
-            _ceu_constr_202(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->down)), _ceu_go);
+#line 59 "test.ceu"
+            _ceu_constr_220(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->down)), _ceu_go);
 
-#line 51 "test.ceu"
+#line 59 "test.ceu"
         }
 }
 
-#line 51 "test.ceu"
+#line 59 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, BoxTest_Start_cnt_10,((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->down)),Class_MoveY);
-case BoxTest_Start_cnt_10:;
-/* NODE: AwaitInt 206 */
+    return ceu_out_org_spawn(_ceu_go, BoxTest_Start_cnt_16,((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->down)),Class_MoveY);
+case BoxTest_Start_cnt_16:;
+/* NODE: AwaitInt 224 */
 
-#line 54 "test.ceu"
-    _CEU_NO_206_:
+#line 62 "test.ceu"
+    _CEU_NO_224_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = BoxTest_Awake_ok_11;
+    _ceu_go->trl->lbl = BoxTest_Awake_ok_17;
 
-#line 54 "test.ceu"
+#line 62 "test.ceu"
     	return RET_HALT;
-#line 54 "test.ceu"
-    case BoxTest_Awake_ok_11:;
+#line 62 "test.ceu"
+    case BoxTest_Awake_ok_17:;
 
-#line 54 "test.ceu"
+#line 62 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_BoxTest*)_ceu_go->org)->down) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_206_;
+        goto _CEU_NO_224_;
     }
 #endif
 
-#line 54 "test.ceu"
+#line 62 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Dcl_var 216 */
+/* NODE: Dcl_var 234 */
 
-#line 55 "test.ceu"
+#line 63 "test.ceu"
 /* start org: left */
-#line 55 "test.ceu"
+#line 63 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->left)),2,Class_MoveX,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->left)),3,Class_MoveX,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -4563,54 +4675,54 @@ _ceu_go->org, 3);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 55 "test.ceu"
-            _ceu_constr_215(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->left)), _ceu_go);
+#line 63 "test.ceu"
+            _ceu_constr_233(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->left)), _ceu_go);
 
-#line 55 "test.ceu"
+#line 63 "test.ceu"
         }
 }
 
-#line 55 "test.ceu"
+#line 63 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, BoxTest_Start_cnt_12,((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->left)),Class_MoveX);
-case BoxTest_Start_cnt_12:;
-/* NODE: AwaitInt 219 */
+    return ceu_out_org_spawn(_ceu_go, BoxTest_Start_cnt_18,((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->left)),Class_MoveX);
+case BoxTest_Start_cnt_18:;
+/* NODE: AwaitInt 237 */
 
-#line 58 "test.ceu"
-    _CEU_NO_219_:
+#line 66 "test.ceu"
+    _CEU_NO_237_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = BoxTest_Awake_ok_13;
+    _ceu_go->trl->lbl = BoxTest_Awake_ok_19;
 
-#line 58 "test.ceu"
+#line 66 "test.ceu"
     	return RET_HALT;
-#line 58 "test.ceu"
-    case BoxTest_Awake_ok_13:;
+#line 66 "test.ceu"
+    case BoxTest_Awake_ok_19:;
 
-#line 58 "test.ceu"
+#line 66 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_BoxTest*)_ceu_go->org)->left) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_219_;
+        goto _CEU_NO_237_;
     }
 #endif
 
-#line 58 "test.ceu"
+#line 66 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Dcl_var 229 */
+/* NODE: Dcl_var 247 */
 
-#line 59 "test.ceu"
+#line 67 "test.ceu"
 /* start org: up */
-#line 59 "test.ceu"
+#line 67 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->up)),2,Class_MoveY,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->up)),3,Class_MoveY,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -4620,49 +4732,49 @@ _ceu_go->org, 4);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 59 "test.ceu"
-            _ceu_constr_228(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->up)), _ceu_go);
+#line 67 "test.ceu"
+            _ceu_constr_246(_ceu_app, ((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->up)), _ceu_go);
 
-#line 59 "test.ceu"
+#line 67 "test.ceu"
         }
 }
 
-#line 59 "test.ceu"
+#line 67 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, BoxTest_Start_cnt_14,((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->up)),Class_MoveY);
-case BoxTest_Start_cnt_14:;
-/* NODE: AwaitInt 232 */
+    return ceu_out_org_spawn(_ceu_go, BoxTest_Start_cnt_20,((tceu_org*) (&((CEU_BoxTest*)_ceu_go->org)->up)),Class_MoveY);
+case BoxTest_Start_cnt_20:;
+/* NODE: AwaitInt 250 */
 
-#line 62 "test.ceu"
-    _CEU_NO_232_:
+#line 70 "test.ceu"
+    _CEU_NO_250_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = BoxTest_Awake_ok_15;
+    _ceu_go->trl->lbl = BoxTest_Awake_ok_21;
 
-#line 62 "test.ceu"
+#line 70 "test.ceu"
     	return RET_HALT;
-#line 62 "test.ceu"
-    case BoxTest_Awake_ok_15:;
+#line 70 "test.ceu"
+    case BoxTest_Awake_ok_21:;
 
-#line 62 "test.ceu"
+#line 70 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_BoxTest*)_ceu_go->org)->up) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_232_;
+        goto _CEU_NO_250_;
     }
 #endif
 
-#line 62 "test.ceu"
+#line 70 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: CallStmt 233 */
+/* NODE: CallStmt 251 */
 
-#line 63 "test.ceu"
-    printf("boxtest done\n");/* NODE: EmitInt 236 */
+#line 71 "test.ceu"
+    printf("boxtest done\n");/* NODE: EmitInt 254 */
 
-#line 64 "test.ceu"
+#line 72 "test.ceu"
     _ceu_go->stk[_ceu_go->stki].evtp = _ceu_go->evtp;
 #ifdef CEU_INTS
 #ifdef CEU_ORGS
@@ -4673,7 +4785,7 @@ _ceu_go->stk[_ceu_go->stki].evt  = _ceu_go->evt;    /* 3rd (stk) other trails */
 
 _ceu_go->trl->evt = CEU_IN__STK;
 _ceu_go->trl->stk = _ceu_go->stki++;                /* 2nd (stk) me */
-_ceu_go->trl->lbl = BoxTest_EmitInt_cont_16;
+_ceu_go->trl->lbl = BoxTest_EmitInt_cont_22;
                                             /* 1st (stk+1) my lsts */
 /* TRIGGER EVENT */
 _ceu_go->evt  = 2;
@@ -4681,50 +4793,50 @@ _ceu_go->evt  = 2;
 _ceu_go->evto = (tceu_org*) ((CEU_BoxTest*)_ceu_go->org);
 #endif
 
-#line 64 "test.ceu"
+#line 72 "test.ceu"
     #ifdef CEU_ORGS
 _ceu_go->org = _ceu_app->data;   /* TODO(speed): check if is_ifc */
 #endif
 /*goto _CEU_CALL_ORG_;*/
 return RET_ORG;
 
-case BoxTest_EmitInt_cont_16:;
+case BoxTest_EmitInt_cont_22:;
 
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     }
-#line 46 "test.ceu"
-/* CLEAR: Block (46) */
-#line 46 "test.ceu"
+#line 54 "test.ceu"
+/* CLEAR: Block (54) */
+#line 54 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = BoxTest_Clear_17;
+    trl->lbl = BoxTest_Clear_23;
 }
 return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 6 ]);
 
-case BoxTest_Clear_17:;
+case BoxTest_Clear_23:;
 
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     }
-#line 46 "test.ceu"
+#line 54 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 43 "test.ceu"
+#line 51 "test.ceu"
     }
-#line 43 "test.ceu"
-/* CLEAR: Block (43) */
-#line 43 "test.ceu"
+#line 51 "test.ceu"
+/* CLEAR: Block (51) */
+#line 51 "test.ceu"
     }
-#line 43 "test.ceu"
+#line 51 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 43 "test.ceu"
+#line 51 "test.ceu"
     #ifdef CEU_NEWS
 if (_ceu_go->org->isDyn) {
     _ceu_go->org->isAlive = 0;
@@ -4732,73 +4844,73 @@ if (_ceu_go->org->isDyn) {
 }
 #endif
 
-#line 43 "test.ceu"
+#line 51 "test.ceu"
     	return RET_HALT;/* NODE: Dcl_cls 3 */
 
-#line 67 "test.ceu"
+#line 75 "test.ceu"
 case Class_DiagonalTest:;
-#line 67 "test.ceu"
+#line 75 "test.ceu"
     #ifdef CEU_IFCS
 _ceu_go->org->cls = 3;
 #endif
-/* NODE: Block 674 */
+/* NODE: Block 672 */
 
-#line 67 "test.ceu"
-    {/* NODE: Stmts 673 */
+#line 75 "test.ceu"
+    {/* NODE: Stmts 671 */
 
-#line 67 "test.ceu"
-    {/* NODE: Block 308 */
+#line 75 "test.ceu"
+    {/* NODE: Block 326 */
 
-#line 70 "test.ceu"
-    {/* NODE: Stmts 307 */
+#line 78 "test.ceu"
+    {/* NODE: Stmts 325 */
 
-#line 70 "test.ceu"
-    {/* NODE: CallStmt 242 */
+#line 78 "test.ceu"
+    {/* NODE: CallStmt 260 */
 
-#line 70 "test.ceu"
-    printf("diagonaltest starting\n");/* NODE: ParAnd 271 */
+#line 78 "test.ceu"
+    printf("diagonaltest starting\n");/* NODE: ParAnd 289 */
 
-#line 71 "test.ceu"
+#line 79 "test.ceu"
 /* close ParAnd gates */
-#line 71 "test.ceu"
-    ((CEU_DiagonalTest*)_ceu_go->org)->__and_271_1 = 0;
-#line 71 "test.ceu"
-    ((CEU_DiagonalTest*)_ceu_go->org)->__and_271_2 = 0;
-#line 71 "test.ceu"
+#line 79 "test.ceu"
+    ((CEU_DiagonalTest*)_ceu_go->org)->__and_289_1 = 0;
+#line 79 "test.ceu"
+    ((CEU_DiagonalTest*)_ceu_go->org)->__and_289_2 = 0;
+#line 79 "test.ceu"
 /* ParAnd: spawn subs */
-#line 71 "test.ceu"
+#line 79 "test.ceu"
     /* TODO: function? */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
     trl->evt = CEU_IN__STK;
-    trl->lbl = DiagonalTest_ParAnd_sub_2_20;
+    trl->lbl = DiagonalTest_ParAnd_sub_2_26;
     trl->stk = _ceu_go->stki;
 }
-/* NODE: Block 256 */
+/* NODE: Block 274 */
 
-#line 72 "test.ceu"
+#line 80 "test.ceu"
     {
-#line 72 "test.ceu"
+#line 80 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_DiagonalTest*)_ceu_go->org)->__lnks_256_1);
+ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_DiagonalTest*)_ceu_go->org)->__lnks_274_1);
 
-#line 72 "test.ceu"
+#line 80 "test.ceu"
     /* switch to blk trail */
 _ceu_go->trl = &_ceu_go->org->trls[ 2 ];
-/* NODE: Stmts 255 */
+/* NODE: Stmts 273 */
 
-#line 72 "test.ceu"
-    {/* NODE: Dcl_var 251 */
+#line 80 "test.ceu"
+    {/* NODE: Dcl_var 269 */
 
-#line 72 "test.ceu"
+#line 80 "test.ceu"
 /* start org: right */
-#line 72 "test.ceu"
+#line 80 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->right_2)),2,Class_MoveX,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->right_2)),3,Class_MoveX,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -4808,100 +4920,100 @@ _ceu_go->org, 1);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 72 "test.ceu"
-            _ceu_constr_250(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->right_2)), _ceu_go);
+#line 80 "test.ceu"
+            _ceu_constr_268(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->right_2)), _ceu_go);
 
-#line 72 "test.ceu"
+#line 80 "test.ceu"
         }
 }
 
-#line 72 "test.ceu"
+#line 80 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, DiagonalTest_Start_cnt_23,((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->right_2)),Class_MoveX);
-case DiagonalTest_Start_cnt_23:;
-/* NODE: AwaitInt 254 */
+    return ceu_out_org_spawn(_ceu_go, DiagonalTest_Start_cnt_29,((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->right_2)),Class_MoveX);
+case DiagonalTest_Start_cnt_29:;
+/* NODE: AwaitInt 272 */
 
-#line 75 "test.ceu"
-    _CEU_NO_254_:
+#line 83 "test.ceu"
+    _CEU_NO_272_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = DiagonalTest_Awake_ok_24;
+    _ceu_go->trl->lbl = DiagonalTest_Awake_ok_30;
 
-#line 75 "test.ceu"
+#line 83 "test.ceu"
     	return RET_HALT;
-#line 75 "test.ceu"
-    case DiagonalTest_Awake_ok_24:;
+#line 83 "test.ceu"
+    case DiagonalTest_Awake_ok_30:;
 
-#line 75 "test.ceu"
+#line 83 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_DiagonalTest*)_ceu_go->org)->right_2) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_254_;
+        goto _CEU_NO_272_;
     }
 #endif
 
-#line 75 "test.ceu"
+#line 83 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
 
-#line 72 "test.ceu"
+#line 80 "test.ceu"
     }
-#line 72 "test.ceu"
-/* CLEAR: Block (72) */
-#line 72 "test.ceu"
+#line 80 "test.ceu"
+/* CLEAR: Block (80) */
+#line 80 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = DiagonalTest_Clear_25;
+    trl->lbl = DiagonalTest_Clear_31;
 }
 return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 3 ]);
 
-case DiagonalTest_Clear_25:;
+case DiagonalTest_Clear_31:;
 
-#line 72 "test.ceu"
+#line 80 "test.ceu"
     }
-#line 72 "test.ceu"
+#line 80 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 71 "test.ceu"
-    ((CEU_DiagonalTest*)_ceu_go->org)->__and_271_1 = 1;
-#line 71 "test.ceu"
-    _ceu_go->lbl = DiagonalTest_ParAnd_chk_21;
+#line 79 "test.ceu"
+    ((CEU_DiagonalTest*)_ceu_go->org)->__and_289_1 = 1;
+#line 79 "test.ceu"
+    _ceu_go->lbl = DiagonalTest_ParAnd_chk_27;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 71 "test.ceu"
-case DiagonalTest_ParAnd_sub_2_20:;/* NODE: Block 270 */
+#line 79 "test.ceu"
+case DiagonalTest_ParAnd_sub_2_26:;/* NODE: Block 288 */
 
-#line 77 "test.ceu"
+#line 85 "test.ceu"
     {
-#line 77 "test.ceu"
+#line 85 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 4, (tceu_org_lnk*) &((CEU_DiagonalTest*)_ceu_go->org)->__lnks_270_4);
+ceu_out_org_trail(_ceu_go->org, 4, (tceu_org_lnk*) &((CEU_DiagonalTest*)_ceu_go->org)->__lnks_288_4);
 
-#line 77 "test.ceu"
+#line 85 "test.ceu"
     /* switch to blk trail */
 _ceu_go->trl = &_ceu_go->org->trls[ 5 ];
-/* NODE: Stmts 269 */
+/* NODE: Stmts 287 */
 
-#line 77 "test.ceu"
-    {/* NODE: Dcl_var 265 */
+#line 85 "test.ceu"
+    {/* NODE: Dcl_var 283 */
 
-#line 77 "test.ceu"
+#line 85 "test.ceu"
 /* start org: down */
-#line 77 "test.ceu"
+#line 85 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->down_3)),2,Class_MoveY,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->down_3)),3,Class_MoveY,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -4911,238 +5023,238 @@ _ceu_go->org, 4);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 77 "test.ceu"
-            _ceu_constr_264(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->down_3)), _ceu_go);
+#line 85 "test.ceu"
+            _ceu_constr_282(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->down_3)), _ceu_go);
 
-#line 77 "test.ceu"
+#line 85 "test.ceu"
         }
 }
 
-#line 77 "test.ceu"
+#line 85 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, DiagonalTest_Start_cnt_26,((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->down_3)),Class_MoveY);
-case DiagonalTest_Start_cnt_26:;
-/* NODE: AwaitInt 268 */
-
-#line 80 "test.ceu"
-    _CEU_NO_268_:
-    _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = DiagonalTest_Awake_ok_27;
-
-#line 80 "test.ceu"
-    	return RET_HALT;
-#line 80 "test.ceu"
-    case DiagonalTest_Awake_ok_27:;
-
-#line 80 "test.ceu"
-    #ifdef CEU_ORGS
-    if ((tceu_org*)(&((CEU_DiagonalTest*)_ceu_go->org)->down_3) != _ceu_go->evto) {
-        _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_268_;
-    }
-#endif
-
-#line 80 "test.ceu"
-    #ifdef CEU_DEBUG_TRAILS
-#ifndef CEU_OS
-fprintf(stderr, "\tOK!\n");
-#endif
-#endif
-
-#line 77 "test.ceu"
-    }
-#line 77 "test.ceu"
-/* CLEAR: Block (77) */
-#line 77 "test.ceu"
-    /* trails[1] points to ORG blk */
-{
-    tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
-    trl->evt = CEU_IN__STK;
-    trl->stk = _ceu_go->stki;
-    trl->lbl = DiagonalTest_Clear_28;
-}
-return ceu_out_clear(_ceu_go, 4,                     &_ceu_go->org->trls[ 6 ]);
-
-case DiagonalTest_Clear_28:;
-
-#line 77 "test.ceu"
-    }
-#line 77 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
-
-#line 71 "test.ceu"
-    ((CEU_DiagonalTest*)_ceu_go->org)->__and_271_2 = 1;
-#line 71 "test.ceu"
-    _ceu_go->lbl = DiagonalTest_ParAnd_chk_21;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 71 "test.ceu"
-case DiagonalTest_ParAnd_chk_21:;
-#line 71 "test.ceu"
-    if (!((CEU_DiagonalTest*)_ceu_go->org)->__and_271_1) {
-#line 71 "test.ceu"
-    	return RET_HALT;
-#line 71 "test.ceu"
-    }
-#line 71 "test.ceu"
-    if (!((CEU_DiagonalTest*)_ceu_go->org)->__and_271_2) {
-#line 71 "test.ceu"
-    	return RET_HALT;
-#line 71 "test.ceu"
-    }
-#line 71 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-_ceu_go->trl = &_ceu_go->org->trls[ 0 ];
-/* NODE: ParAnd 302 */
-
-#line 82 "test.ceu"
-/* close ParAnd gates */
-#line 82 "test.ceu"
-    ((CEU_DiagonalTest*)_ceu_go->org)->__and_302_1 = 0;
-#line 82 "test.ceu"
-    ((CEU_DiagonalTest*)_ceu_go->org)->__and_302_2 = 0;
-#line 82 "test.ceu"
-/* ParAnd: spawn subs */
-#line 82 "test.ceu"
-    /* TODO: function? */
-{
-    tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
-    trl->evt = CEU_IN__STK;
-    trl->lbl = DiagonalTest_ParAnd_sub_2_29;
-    trl->stk = _ceu_go->stki;
-}
-/* NODE: Block 286 */
-
-#line 83 "test.ceu"
-    {
-#line 83 "test.ceu"
-    /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_DiagonalTest*)_ceu_go->org)->__lnks_286_1);
-
-#line 83 "test.ceu"
-    /* switch to blk trail */
-_ceu_go->trl = &_ceu_go->org->trls[ 2 ];
-/* NODE: Stmts 285 */
-
-#line 83 "test.ceu"
-    {/* NODE: Dcl_var 281 */
-
-#line 83 "test.ceu"
-/* start org: left */
-#line 83 "test.ceu"
-    /* each org has its own trail on enclosing block */
-{
-    int i;
-    for (i=0; i<1; i++) {
-        /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->left_4)),2,Class_MoveX,
-                _ceu_go->stki+1,    /* run now */
-#ifdef CEU_NEWS
-                0,
-#endif
-_ceu_go->org, 1);
-/* TODO: currently idx is always "1" for all interfaces access because pools 
- * are all together there. When we have separate trls for pools, we'll have to 
- * indirectly access the offset in the interface. */
-
-#line 83 "test.ceu"
-            _ceu_constr_280(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->left_4)), _ceu_go);
-
-#line 83 "test.ceu"
-        }
-}
-
-#line 83 "test.ceu"
-    /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, DiagonalTest_Start_cnt_32,((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->left_4)),Class_MoveX);
+    return ceu_out_org_spawn(_ceu_go, DiagonalTest_Start_cnt_32,((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->down_3)),Class_MoveY);
 case DiagonalTest_Start_cnt_32:;
-/* NODE: AwaitInt 284 */
+/* NODE: AwaitInt 286 */
 
-#line 86 "test.ceu"
-    _CEU_NO_284_:
+#line 88 "test.ceu"
+    _CEU_NO_286_:
     _ceu_go->trl->evt = 2;
     _ceu_go->trl->lbl = DiagonalTest_Awake_ok_33;
 
-#line 86 "test.ceu"
+#line 88 "test.ceu"
     	return RET_HALT;
-#line 86 "test.ceu"
+#line 88 "test.ceu"
     case DiagonalTest_Awake_ok_33:;
 
-#line 86 "test.ceu"
+#line 88 "test.ceu"
     #ifdef CEU_ORGS
-    if ((tceu_org*)(&((CEU_DiagonalTest*)_ceu_go->org)->left_4) != _ceu_go->evto) {
+    if ((tceu_org*)(&((CEU_DiagonalTest*)_ceu_go->org)->down_3) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_284_;
+        goto _CEU_NO_286_;
     }
 #endif
 
-#line 86 "test.ceu"
+#line 88 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
 
-#line 83 "test.ceu"
+#line 85 "test.ceu"
     }
-#line 83 "test.ceu"
-/* CLEAR: Block (83) */
-#line 83 "test.ceu"
+#line 85 "test.ceu"
+/* CLEAR: Block (85) */
+#line 85 "test.ceu"
     /* trails[1] points to ORG blk */
 {
-    tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
+    tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
     trl->lbl = DiagonalTest_Clear_34;
 }
-return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 3 ]);
+return ceu_out_clear(_ceu_go, 4,                     &_ceu_go->org->trls[ 6 ]);
 
 case DiagonalTest_Clear_34:;
 
-#line 83 "test.ceu"
+#line 85 "test.ceu"
     }
-#line 83 "test.ceu"
+#line 85 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
 
-#line 82 "test.ceu"
-    ((CEU_DiagonalTest*)_ceu_go->org)->__and_302_1 = 1;
-#line 82 "test.ceu"
-    _ceu_go->lbl = DiagonalTest_ParAnd_chk_30;
+#line 79 "test.ceu"
+    ((CEU_DiagonalTest*)_ceu_go->org)->__and_289_2 = 1;
+#line 79 "test.ceu"
+    _ceu_go->lbl = DiagonalTest_ParAnd_chk_27;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 82 "test.ceu"
-case DiagonalTest_ParAnd_sub_2_29:;/* NODE: Block 301 */
+#line 79 "test.ceu"
+case DiagonalTest_ParAnd_chk_27:;
+#line 79 "test.ceu"
+    if (!((CEU_DiagonalTest*)_ceu_go->org)->__and_289_1) {
+#line 79 "test.ceu"
+    	return RET_HALT;
+#line 79 "test.ceu"
+    }
+#line 79 "test.ceu"
+    if (!((CEU_DiagonalTest*)_ceu_go->org)->__and_289_2) {
+#line 79 "test.ceu"
+    	return RET_HALT;
+#line 79 "test.ceu"
+    }
+#line 79 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+_ceu_go->trl = &_ceu_go->org->trls[ 0 ];
+/* NODE: ParAnd 320 */
 
-#line 88 "test.ceu"
+#line 90 "test.ceu"
+/* close ParAnd gates */
+#line 90 "test.ceu"
+    ((CEU_DiagonalTest*)_ceu_go->org)->__and_320_1 = 0;
+#line 90 "test.ceu"
+    ((CEU_DiagonalTest*)_ceu_go->org)->__and_320_2 = 0;
+#line 90 "test.ceu"
+/* ParAnd: spawn subs */
+#line 90 "test.ceu"
+    /* TODO: function? */
+{
+    tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
+    trl->evt = CEU_IN__STK;
+    trl->lbl = DiagonalTest_ParAnd_sub_2_35;
+    trl->stk = _ceu_go->stki;
+}
+/* NODE: Block 304 */
+
+#line 91 "test.ceu"
     {
-#line 88 "test.ceu"
+#line 91 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 4, (tceu_org_lnk*) &((CEU_DiagonalTest*)_ceu_go->org)->__lnks_301_4);
+ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_DiagonalTest*)_ceu_go->org)->__lnks_304_1);
 
-#line 88 "test.ceu"
+#line 91 "test.ceu"
     /* switch to blk trail */
-_ceu_go->trl = &_ceu_go->org->trls[ 5 ];
-/* NODE: Stmts 300 */
+_ceu_go->trl = &_ceu_go->org->trls[ 2 ];
+/* NODE: Stmts 303 */
 
-#line 88 "test.ceu"
-    {/* NODE: Dcl_var 296 */
+#line 91 "test.ceu"
+    {/* NODE: Dcl_var 299 */
 
-#line 88 "test.ceu"
-/* start org: up */
-#line 88 "test.ceu"
+#line 91 "test.ceu"
+/* start org: left */
+#line 91 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->up_5)),2,Class_MoveY,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->left_4)),3,Class_MoveX,
+                _ceu_go->stki+1,    /* run now */
+#ifdef CEU_NEWS
+                0,
+#endif
+_ceu_go->org, 1);
+/* TODO: currently idx is always "1" for all interfaces access because pools 
+ * are all together there. When we have separate trls for pools, we'll have to 
+ * indirectly access the offset in the interface. */
+
+#line 91 "test.ceu"
+            _ceu_constr_298(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->left_4)), _ceu_go);
+
+#line 91 "test.ceu"
+        }
+}
+
+#line 91 "test.ceu"
+    /* TODO: CEU_OS */
+    return ceu_out_org_spawn(_ceu_go, DiagonalTest_Start_cnt_38,((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->left_4)),Class_MoveX);
+case DiagonalTest_Start_cnt_38:;
+/* NODE: AwaitInt 302 */
+
+#line 94 "test.ceu"
+    _CEU_NO_302_:
+    _ceu_go->trl->evt = 2;
+    _ceu_go->trl->lbl = DiagonalTest_Awake_ok_39;
+
+#line 94 "test.ceu"
+    	return RET_HALT;
+#line 94 "test.ceu"
+    case DiagonalTest_Awake_ok_39:;
+
+#line 94 "test.ceu"
+    #ifdef CEU_ORGS
+    if ((tceu_org*)(&((CEU_DiagonalTest*)_ceu_go->org)->left_4) != _ceu_go->evto) {
+        _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
+        goto _CEU_NO_302_;
+    }
+#endif
+
+#line 94 "test.ceu"
+    #ifdef CEU_DEBUG_TRAILS
+#ifndef CEU_OS
+fprintf(stderr, "\tOK!\n");
+#endif
+#endif
+
+#line 91 "test.ceu"
+    }
+#line 91 "test.ceu"
+/* CLEAR: Block (91) */
+#line 91 "test.ceu"
+    /* trails[1] points to ORG blk */
+{
+    tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
+    trl->evt = CEU_IN__STK;
+    trl->stk = _ceu_go->stki;
+    trl->lbl = DiagonalTest_Clear_40;
+}
+return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 3 ]);
+
+case DiagonalTest_Clear_40:;
+
+#line 91 "test.ceu"
+    }
+#line 91 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
+
+#line 90 "test.ceu"
+    ((CEU_DiagonalTest*)_ceu_go->org)->__and_320_1 = 1;
+#line 90 "test.ceu"
+    _ceu_go->lbl = DiagonalTest_ParAnd_chk_36;
+goto _CEU_GOTO_;
+/*return RET_GOTO;*/
+
+#line 90 "test.ceu"
+case DiagonalTest_ParAnd_sub_2_35:;/* NODE: Block 319 */
+
+#line 96 "test.ceu"
+    {
+#line 96 "test.ceu"
+    /* TODO: CEU_OS */
+ceu_out_org_trail(_ceu_go->org, 4, (tceu_org_lnk*) &((CEU_DiagonalTest*)_ceu_go->org)->__lnks_319_4);
+
+#line 96 "test.ceu"
+    /* switch to blk trail */
+_ceu_go->trl = &_ceu_go->org->trls[ 5 ];
+/* NODE: Stmts 318 */
+
+#line 96 "test.ceu"
+    {/* NODE: Dcl_var 314 */
+
+#line 96 "test.ceu"
+/* start org: up */
+#line 96 "test.ceu"
+    /* each org has its own trail on enclosing block */
+{
+    int i;
+    for (i=0; i<1; i++) {
+        /* resets org memory and starts org.trail[0]=Class_XXX */
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->up_5)),3,Class_MoveY,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -5152,98 +5264,98 @@ _ceu_go->org, 4);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 88 "test.ceu"
-            _ceu_constr_295(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->up_5)), _ceu_go);
+#line 96 "test.ceu"
+            _ceu_constr_313(_ceu_app, ((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->up_5)), _ceu_go);
 
-#line 88 "test.ceu"
+#line 96 "test.ceu"
         }
 }
 
-#line 88 "test.ceu"
+#line 96 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, DiagonalTest_Start_cnt_35,((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->up_5)),Class_MoveY);
-case DiagonalTest_Start_cnt_35:;
-/* NODE: AwaitInt 299 */
+    return ceu_out_org_spawn(_ceu_go, DiagonalTest_Start_cnt_41,((tceu_org*) (&((CEU_DiagonalTest*)_ceu_go->org)->up_5)),Class_MoveY);
+case DiagonalTest_Start_cnt_41:;
+/* NODE: AwaitInt 317 */
 
-#line 91 "test.ceu"
-    _CEU_NO_299_:
+#line 99 "test.ceu"
+    _CEU_NO_317_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = DiagonalTest_Awake_ok_36;
+    _ceu_go->trl->lbl = DiagonalTest_Awake_ok_42;
 
-#line 91 "test.ceu"
+#line 99 "test.ceu"
     	return RET_HALT;
-#line 91 "test.ceu"
-    case DiagonalTest_Awake_ok_36:;
+#line 99 "test.ceu"
+    case DiagonalTest_Awake_ok_42:;
 
-#line 91 "test.ceu"
+#line 99 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_DiagonalTest*)_ceu_go->org)->up_5) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_299_;
+        goto _CEU_NO_317_;
     }
 #endif
 
-#line 91 "test.ceu"
+#line 99 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
 
-#line 88 "test.ceu"
+#line 96 "test.ceu"
     }
-#line 88 "test.ceu"
-/* CLEAR: Block (88) */
-#line 88 "test.ceu"
+#line 96 "test.ceu"
+/* CLEAR: Block (96) */
+#line 96 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = DiagonalTest_Clear_37;
+    trl->lbl = DiagonalTest_Clear_43;
 }
 return ceu_out_clear(_ceu_go, 4,                     &_ceu_go->org->trls[ 6 ]);
 
-case DiagonalTest_Clear_37:;
+case DiagonalTest_Clear_43:;
 
-#line 88 "test.ceu"
+#line 96 "test.ceu"
     }
-#line 88 "test.ceu"
+#line 96 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
 
-#line 82 "test.ceu"
-    ((CEU_DiagonalTest*)_ceu_go->org)->__and_302_2 = 1;
-#line 82 "test.ceu"
-    _ceu_go->lbl = DiagonalTest_ParAnd_chk_30;
+#line 90 "test.ceu"
+    ((CEU_DiagonalTest*)_ceu_go->org)->__and_320_2 = 1;
+#line 90 "test.ceu"
+    _ceu_go->lbl = DiagonalTest_ParAnd_chk_36;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 82 "test.ceu"
-case DiagonalTest_ParAnd_chk_30:;
-#line 82 "test.ceu"
-    if (!((CEU_DiagonalTest*)_ceu_go->org)->__and_302_1) {
-#line 82 "test.ceu"
+#line 90 "test.ceu"
+case DiagonalTest_ParAnd_chk_36:;
+#line 90 "test.ceu"
+    if (!((CEU_DiagonalTest*)_ceu_go->org)->__and_320_1) {
+#line 90 "test.ceu"
     	return RET_HALT;
-#line 82 "test.ceu"
+#line 90 "test.ceu"
     }
-#line 82 "test.ceu"
-    if (!((CEU_DiagonalTest*)_ceu_go->org)->__and_302_2) {
-#line 82 "test.ceu"
+#line 90 "test.ceu"
+    if (!((CEU_DiagonalTest*)_ceu_go->org)->__and_320_2) {
+#line 90 "test.ceu"
     	return RET_HALT;
-#line 82 "test.ceu"
+#line 90 "test.ceu"
     }
-#line 82 "test.ceu"
+#line 90 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 0 ];
-/* NODE: CallStmt 303 */
+/* NODE: CallStmt 321 */
 
-#line 93 "test.ceu"
-    printf("diagonaltest done\n");/* NODE: EmitInt 306 */
+#line 101 "test.ceu"
+    printf("diagonaltest done\n");/* NODE: EmitInt 324 */
 
-#line 94 "test.ceu"
+#line 102 "test.ceu"
     _ceu_go->stk[_ceu_go->stki].evtp = _ceu_go->evtp;
 #ifdef CEU_INTS
 #ifdef CEU_ORGS
@@ -5254,7 +5366,7 @@ _ceu_go->stk[_ceu_go->stki].evt  = _ceu_go->evt;    /* 3rd (stk) other trails */
 
 _ceu_go->trl->evt = CEU_IN__STK;
 _ceu_go->trl->stk = _ceu_go->stki++;                /* 2nd (stk) me */
-_ceu_go->trl->lbl = DiagonalTest_EmitInt_cont_38;
+_ceu_go->trl->lbl = DiagonalTest_EmitInt_cont_44;
                                             /* 1st (stk+1) my lsts */
 /* TRIGGER EVENT */
 _ceu_go->evt  = 2;
@@ -5262,38 +5374,38 @@ _ceu_go->evt  = 2;
 _ceu_go->evto = (tceu_org*) ((CEU_DiagonalTest*)_ceu_go->org);
 #endif
 
-#line 94 "test.ceu"
+#line 102 "test.ceu"
     #ifdef CEU_ORGS
 _ceu_go->org = _ceu_app->data;   /* TODO(speed): check if is_ifc */
 #endif
 /*goto _CEU_CALL_ORG_;*/
 return RET_ORG;
 
-case DiagonalTest_EmitInt_cont_38:;
+case DiagonalTest_EmitInt_cont_44:;
 
-#line 70 "test.ceu"
+#line 78 "test.ceu"
     }
-#line 70 "test.ceu"
-/* CLEAR: Block (70) */
-#line 70 "test.ceu"
+#line 78 "test.ceu"
+/* CLEAR: Block (78) */
+#line 78 "test.ceu"
     }
-#line 70 "test.ceu"
+#line 78 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 67 "test.ceu"
+#line 75 "test.ceu"
     }
-#line 67 "test.ceu"
-/* CLEAR: Block (67) */
-#line 67 "test.ceu"
+#line 75 "test.ceu"
+/* CLEAR: Block (75) */
+#line 75 "test.ceu"
     }
-#line 67 "test.ceu"
+#line 75 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 67 "test.ceu"
+#line 75 "test.ceu"
     #ifdef CEU_NEWS
 if (_ceu_go->org->isDyn) {
     _ceu_go->org->isAlive = 0;
@@ -5301,80 +5413,72 @@ if (_ceu_go->org->isDyn) {
 }
 #endif
 
-#line 67 "test.ceu"
+#line 75 "test.ceu"
     	return RET_HALT;/* NODE: Dcl_cls 4 */
 
-#line 97 "test.ceu"
+#line 105 "test.ceu"
 case Class_RulesTest:;
-#line 97 "test.ceu"
+#line 105 "test.ceu"
     #ifdef CEU_IFCS
 _ceu_go->org->cls = 4;
 #endif
-/* NODE: Block 719 */
+/* NODE: Block 717 */
 
-#line 97 "test.ceu"
-    {/* NODE: Stmts 718 */
+#line 105 "test.ceu"
+    {/* NODE: Stmts 716 */
 
-#line 97 "test.ceu"
-    {/* NODE: Block 585 */
+#line 105 "test.ceu"
+    {/* NODE: Block 583 */
 
-#line 100 "test.ceu"
-    {/* NODE: Stmts 584 */
+#line 108 "test.ceu"
+    {/* NODE: Stmts 582 */
 
-#line 100 "test.ceu"
-    {/* NODE: CallStmt 312 */
+#line 108 "test.ceu"
+    {/* NODE: CallStmt 330 */
 
-#line 100 "test.ceu"
-    printf("rulestest starting\n");/* NODE: Loop 678 */
+#line 108 "test.ceu"
+    printf("rulestest starting\n");/* NODE: Loop 676 */
 
-#line 101 "test.ceu"
+#line 109 "test.ceu"
     for (;;) {
-/* NODE: Block 576 */
+/* NODE: Block 574 */
 
-#line 102 "test.ceu"
-    {/* NODE: Stmts 575 */
+#line 110 "test.ceu"
+    {/* NODE: Stmts 573 */
 
-#line 102 "test.ceu"
-    {/* NODE: If 574 */
+#line 110 "test.ceu"
+    {/* NODE: If 572 */
 
-#line 102 "test.ceu"
+#line 110 "test.ceu"
     if ((x()<30)) {
-/* NODE: Block 360 */
+/* NODE: Block 373 */
 
-#line 103 "test.ceu"
-    /*  FINALIZE */
-_ceu_go->org->trls[ 4 ].evt   = CEU_IN__CLEAR;
-_ceu_go->org->trls[ 4 ].lbl   = RulesTest_Block__fin_47;
-_ceu_go->org->trls[ 4 ].seqno = _ceu_app->seqno-1; /* awake now */
-
-#line 103 "test.ceu"
-    ((CEU_RulesTest*)_ceu_go->org)->__fin_360_1 = 0;
-#line 103 "test.ceu"
+#line 111 "test.ceu"
     {
-#line 103 "test.ceu"
+#line 111 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_RulesTest*)_ceu_go->org)->__lnks_360_1);
+ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_RulesTest*)_ceu_go->org)->__lnks_373_1);
 
-#line 103 "test.ceu"
+#line 111 "test.ceu"
     /* switch to blk trail */
 _ceu_go->trl = &_ceu_go->org->trls[ 2 ];
-/* NODE: Stmts 359 */
+/* NODE: Stmts 372 */
 
-#line 103 "test.ceu"
-    {/* NODE: CallStmt 318 */
+#line 111 "test.ceu"
+    {/* NODE: CallStmt 336 */
 
-#line 103 "test.ceu"
-    printf("rulestest starting right\n");/* NODE: Dcl_var 331 */
+#line 111 "test.ceu"
+    printf("rulestest starting right\n");/* NODE: Dcl_var 349 */
 
-#line 104 "test.ceu"
+#line 112 "test.ceu"
 /* start org: right */
-#line 104 "test.ceu"
+#line 112 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->right_2)),2,Class_MoveX,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->right_2)),3,Class_MoveX,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -5384,308 +5488,158 @@ _ceu_go->org, 1);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 104 "test.ceu"
-            _ceu_constr_330(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->right_2)), _ceu_go);
+#line 112 "test.ceu"
+            _ceu_constr_348(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->right_2)), _ceu_go);
 
-#line 104 "test.ceu"
+#line 112 "test.ceu"
         }
 }
 
-#line 104 "test.ceu"
+#line 112 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, RulesTest_Start_cnt_41,((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->right_2)),Class_MoveX);
-case RulesTest_Start_cnt_41:;
-/* NODE: Finalize 336 */
+    return ceu_out_org_spawn(_ceu_go, RulesTest_Start_cnt_47,((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->right_2)),Class_MoveX);
+case RulesTest_Start_cnt_47:;
+/* NODE: ParOr 371 */
 
-#line 107 "test.ceu"
-    ((CEU_RulesTest*)_ceu_go->org)->__fin_360_1 = 1;/* NODE: ParOr 358 */
-
-#line 111 "test.ceu"
+#line 115 "test.ceu"
 /* ParOr: spawn subs */
-#line 111 "test.ceu"
+#line 115 "test.ceu"
     /* TODO: function? */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
     trl->evt = CEU_IN__STK;
-    trl->lbl = RulesTest_ParOr_sub_2_42;
+    trl->lbl = RulesTest_ParOr_sub_2_48;
     trl->stk = _ceu_go->stki;
 }
-/* NODE: Block 352 */
+/* NODE: Block 365 */
 
-#line 112 "test.ceu"
-    {/* NODE: Stmts 351 */
+#line 116 "test.ceu"
+    {/* NODE: Stmts 364 */
 
-#line 112 "test.ceu"
-    {/* NODE: Loop 682 */
+#line 116 "test.ceu"
+    {/* NODE: Loop 680 */
 
-#line 112 "test.ceu"
+#line 116 "test.ceu"
     for (;;) {
-/* NODE: Stmts 681 */
+/* NODE: Stmts 679 */
 
-#line 112 "test.ceu"
-    {/* NODE: AwaitExt 680 */
+#line 116 "test.ceu"
+    {/* NODE: AwaitExt 678 */
 
-#line 112 "test.ceu"
+#line 116 "test.ceu"
         _ceu_go->trl->evt = CEU_IN_TICK;
-    _ceu_go->trl->lbl = RulesTest_Awake_TICK_44;
+    _ceu_go->trl->lbl = RulesTest_Awake_TICK_50;
 
-#line 112 "test.ceu"
+#line 116 "test.ceu"
     	return RET_HALT;
-#line 112 "test.ceu"
-    case RulesTest_Awake_TICK_44:;
+#line 116 "test.ceu"
+    case RulesTest_Awake_TICK_50:;
 
-#line 112 "test.ceu"
+#line 116 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Block 349 */
+/* NODE: Block 362 */
 
-#line 113 "test.ceu"
-    {/* NODE: Stmts 348 */
+#line 117 "test.ceu"
+    {/* NODE: Stmts 361 */
 
-#line 113 "test.ceu"
-    {/* NODE: If 684 */
+#line 117 "test.ceu"
+    {/* NODE: If 682 */
 
-#line 113 "test.ceu"
+#line 117 "test.ceu"
     if ((x()>=30)) {
-/* NODE: Block 346 */
+/* NODE: Block 359 */
 
-#line 114 "test.ceu"
-    {/* NODE: Stmts 345 */
+#line 118 "test.ceu"
+    {/* NODE: Stmts 358 */
 
-#line 114 "test.ceu"
-    {/* NODE: CallStmt 343 */
+#line 118 "test.ceu"
+    {/* NODE: CallStmt 356 */
 
-#line 114 "test.ceu"
-    printf("right disqualified\n");/* NODE: Break 344 */
+#line 118 "test.ceu"
+    printf("right disqualified\n");/* NODE: Break 357 */
 
-#line 115 "test.ceu"
+#line 119 "test.ceu"
     break;
-#line 114 "test.ceu"
+#line 118 "test.ceu"
     }
-#line 114 "test.ceu"
-/* CLEAR: Block (114) */
-#line 114 "test.ceu"
+#line 118 "test.ceu"
+/* CLEAR: Block (118) */
+#line 118 "test.ceu"
     }} else {
-/* NODE: Nothing 683 */
+/* NODE: Nothing 681 */
 }
 
-#line 113 "test.ceu"
+#line 117 "test.ceu"
     }
-#line 113 "test.ceu"
-/* CLEAR: Block (113) */
-#line 113 "test.ceu"
+#line 117 "test.ceu"
+/* CLEAR: Block (117) */
+#line 117 "test.ceu"
     }
-#line 113 "test.ceu"
+#line 117 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
 
-#line 112 "test.ceu"
+#line 116 "test.ceu"
     }
-#line 112 "test.ceu"
+#line 116 "test.ceu"
     }
 
-#line 112 "test.ceu"
-/* CLEAR: Loop (112) */
-#line 112 "test.ceu"
+#line 116 "test.ceu"
+/* CLEAR: Loop (116) */
+#line 116 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 2 ];
 
-#line 112 "test.ceu"
+#line 116 "test.ceu"
     }
-#line 112 "test.ceu"
-/* CLEAR: Block (112) */
-#line 112 "test.ceu"
+#line 116 "test.ceu"
+/* CLEAR: Block (116) */
+#line 116 "test.ceu"
     }
-#line 112 "test.ceu"
+#line 116 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
 
-#line 111 "test.ceu"
+#line 115 "test.ceu"
 /* PAROR JOIN */
-#line 111 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_43;
+#line 115 "test.ceu"
+    _ceu_go->lbl = RulesTest_ParOr_out_49;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 111 "test.ceu"
-case RulesTest_ParOr_sub_2_42:;/* NODE: Block 357 */
+#line 115 "test.ceu"
+case RulesTest_ParOr_sub_2_48:;/* NODE: Block 370 */
 
-#line 119 "test.ceu"
-    {/* NODE: Stmts 356 */
+#line 123 "test.ceu"
+    {/* NODE: Stmts 369 */
 
-#line 119 "test.ceu"
-    {/* NODE: AwaitInt 355 */
+#line 123 "test.ceu"
+    {/* NODE: AwaitInt 368 */
 
-#line 119 "test.ceu"
-    _CEU_NO_355_:
+#line 123 "test.ceu"
+    _CEU_NO_368_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = RulesTest_Awake_ok_45;
+    _ceu_go->trl->lbl = RulesTest_Awake_ok_51;
 
-#line 119 "test.ceu"
+#line 123 "test.ceu"
     	return RET_HALT;
-#line 119 "test.ceu"
-    case RulesTest_Awake_ok_45:;
+#line 123 "test.ceu"
+    case RulesTest_Awake_ok_51:;
 
-#line 119 "test.ceu"
+#line 123 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_RulesTest*)_ceu_go->org)->right_2) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_355_;
+        goto _CEU_NO_368_;
     }
 #endif
-
-#line 119 "test.ceu"
-    #ifdef CEU_DEBUG_TRAILS
-#ifndef CEU_OS
-fprintf(stderr, "\tOK!\n");
-#endif
-#endif
-
-#line 119 "test.ceu"
-    }
-#line 119 "test.ceu"
-/* CLEAR: Block (119) */
-#line 119 "test.ceu"
-    }
-#line 119 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
-
-#line 111 "test.ceu"
-/* PAROR JOIN */
-#line 111 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_43;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 111 "test.ceu"
-case RulesTest_ParOr_out_43:;
-#line 111 "test.ceu"
-/* CLEAR: ParOr (111) */
-#line 111 "test.ceu"
-    /* trails[1] points to ORG blk */
-{
-    tceu_trl* trl = &_ceu_go->org->trls[ 2 ];
-    trl->evt = CEU_IN__STK;
-    trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_46;
-}
-return ceu_out_clear(_ceu_go, 3,                     &_ceu_go->org->trls[ 4 ]);
-
-case RulesTest_Clear_46:;
-
-#line 111 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-_ceu_go->trl = &_ceu_go->org->trls[ 2 ];
-
-#line 103 "test.ceu"
-    }
-#line 103 "test.ceu"
-    _ceu_go->lbl = RulesTest_Block_fin_cnt_48;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 103 "test.ceu"
-case RulesTest_Block__fin_47:;
-#line 103 "test.ceu"
-    if (((CEU_RulesTest*)_ceu_go->org)->__fin_360_1) {
-/* NODE: Finally 335 */
-/* NODE: Block 334 */
-
-#line 108 "test.ceu"
-    {/* NODE: Stmts 333 */
-
-#line 108 "test.ceu"
-    {/* NODE: CallStmt 332 */
-
-#line 108 "test.ceu"
-    cancel_x();
-#line 108 "test.ceu"
-    }
-#line 108 "test.ceu"
-/* CLEAR: Block (108) */
-#line 108 "test.ceu"
-    }
-#line 108 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
-}
-
-#line 103 "test.ceu"
-    	return RET_HALT;
-#line 103 "test.ceu"
-case RulesTest_Block_fin_cnt_48:;
-#line 103 "test.ceu"
-/* CLEAR: Block (103) */
-#line 103 "test.ceu"
-    /* trails[1] points to ORG blk */
-{
-    tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
-    trl->evt = CEU_IN__STK;
-    trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_49;
-}
-return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 8 ]);
-
-case RulesTest_Clear_49:;
-
-#line 103 "test.ceu"
-    }
-#line 103 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
-} else {
-/* NODE: Block 573 */
-
-#line 122 "test.ceu"
-    {/* NODE: Stmts 572 */
-
-#line 122 "test.ceu"
-    {/* NODE: ParOr 571 */
-
-#line 122 "test.ceu"
-/* ParOr: spawn subs */
-#line 122 "test.ceu"
-    /* TODO: function? */
-{
-    tceu_trl* trl = &_ceu_go->org->trls[ 1 ];
-    trl->evt = CEU_IN__STK;
-    trl->lbl = RulesTest_ParOr_sub_2_50;
-    trl->stk = _ceu_go->stki;
-}
-/* NODE: Block 376 */
-
-#line 123 "test.ceu"
-    {/* NODE: Stmts 375 */
-
-#line 123 "test.ceu"
-    {/* NODE: Loop 687 */
-
-#line 123 "test.ceu"
-    for (;;) {
-/* NODE: Stmts 686 */
-
-#line 123 "test.ceu"
-    {/* NODE: AwaitExt 685 */
-
-#line 123 "test.ceu"
-        _ceu_go->trl->evt = CEU_IN_TICK;
-    _ceu_go->trl->lbl = RulesTest_Awake_TICK_52;
-
-#line 123 "test.ceu"
-    	return RET_HALT;
-#line 123 "test.ceu"
-    case RulesTest_Awake_TICK_52:;
 
 #line 123 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
@@ -5693,60 +5647,6 @@ case RulesTest_Clear_49:;
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Block 373 */
-
-#line 124 "test.ceu"
-    {/* NODE: Stmts 372 */
-
-#line 124 "test.ceu"
-    {/* NODE: If 689 */
-
-#line 124 "test.ceu"
-    if ((x()<30)) {
-/* NODE: Block 370 */
-
-#line 125 "test.ceu"
-    {/* NODE: Stmts 369 */
-
-#line 125 "test.ceu"
-    {/* NODE: CallStmt 367 */
-
-#line 125 "test.ceu"
-    printf("right preempts\n");/* NODE: Break 368 */
-
-#line 126 "test.ceu"
-    break;
-#line 125 "test.ceu"
-    }
-#line 125 "test.ceu"
-/* CLEAR: Block (125) */
-#line 125 "test.ceu"
-    }} else {
-/* NODE: Nothing 688 */
-}
-
-#line 124 "test.ceu"
-    }
-#line 124 "test.ceu"
-/* CLEAR: Block (124) */
-#line 124 "test.ceu"
-    }
-#line 124 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
-
-#line 123 "test.ceu"
-    }
-#line 123 "test.ceu"
-    }
-
-#line 123 "test.ceu"
-/* CLEAR: Loop (123) */
-#line 123 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-_ceu_go->trl = &_ceu_go->org->trls[ 0 ];
 
 #line 123 "test.ceu"
     }
@@ -5757,62 +5657,219 @@ _ceu_go->trl = &_ceu_go->org->trls[ 0 ];
 #line 123 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
 
-#line 122 "test.ceu"
+#line 115 "test.ceu"
 /* PAROR JOIN */
-#line 122 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_51;
+#line 115 "test.ceu"
+    _ceu_go->lbl = RulesTest_ParOr_out_49;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 122 "test.ceu"
-case RulesTest_ParOr_sub_2_50:;/* NODE: Block 570 */
+#line 115 "test.ceu"
+case RulesTest_ParOr_out_49:;
+#line 115 "test.ceu"
+/* CLEAR: ParOr (115) */
+#line 115 "test.ceu"
+    /* trails[1] points to ORG blk */
+{
+    tceu_trl* trl = &_ceu_go->org->trls[ 2 ];
+    trl->evt = CEU_IN__STK;
+    trl->stk = _ceu_go->stki;
+    trl->lbl = RulesTest_Clear_52;
+}
+return ceu_out_clear(_ceu_go, 3,                     &_ceu_go->org->trls[ 4 ]);
+
+case RulesTest_Clear_52:;
+
+#line 115 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+_ceu_go->trl = &_ceu_go->org->trls[ 2 ];
+
+#line 111 "test.ceu"
+    }
+#line 111 "test.ceu"
+/* CLEAR: Block (111) */
+#line 111 "test.ceu"
+    /* trails[1] points to ORG blk */
+{
+    tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
+    trl->evt = CEU_IN__STK;
+    trl->stk = _ceu_go->stki;
+    trl->lbl = RulesTest_Clear_53;
+}
+return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 7 ]);
+
+case RulesTest_Clear_53:;
+
+#line 111 "test.ceu"
+    }
+#line 111 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
+} else {
+/* NODE: Block 571 */
+
+#line 126 "test.ceu"
+    {/* NODE: Stmts 570 */
+
+#line 126 "test.ceu"
+    {/* NODE: ParOr 569 */
+
+#line 126 "test.ceu"
+/* ParOr: spawn subs */
+#line 126 "test.ceu"
+    /* TODO: function? */
+{
+    tceu_trl* trl = &_ceu_go->org->trls[ 1 ];
+    trl->evt = CEU_IN__STK;
+    trl->lbl = RulesTest_ParOr_sub_2_54;
+    trl->stk = _ceu_go->stki;
+}
+/* NODE: Block 389 */
+
+#line 127 "test.ceu"
+    {/* NODE: Stmts 388 */
+
+#line 127 "test.ceu"
+    {/* NODE: Loop 685 */
+
+#line 127 "test.ceu"
+    for (;;) {
+/* NODE: Stmts 684 */
+
+#line 127 "test.ceu"
+    {/* NODE: AwaitExt 683 */
+
+#line 127 "test.ceu"
+        _ceu_go->trl->evt = CEU_IN_TICK;
+    _ceu_go->trl->lbl = RulesTest_Awake_TICK_56;
+
+#line 127 "test.ceu"
+    	return RET_HALT;
+#line 127 "test.ceu"
+    case RulesTest_Awake_TICK_56:;
+
+#line 127 "test.ceu"
+    #ifdef CEU_DEBUG_TRAILS
+#ifndef CEU_OS
+fprintf(stderr, "\tOK!\n");
+#endif
+#endif
+/* NODE: Block 386 */
+
+#line 128 "test.ceu"
+    {/* NODE: Stmts 385 */
+
+#line 128 "test.ceu"
+    {/* NODE: If 687 */
+
+#line 128 "test.ceu"
+    if ((x()<30)) {
+/* NODE: Block 383 */
+
+#line 129 "test.ceu"
+    {/* NODE: Stmts 382 */
+
+#line 129 "test.ceu"
+    {/* NODE: CallStmt 380 */
+
+#line 129 "test.ceu"
+    printf("right preempts\n");/* NODE: Break 381 */
 
 #line 130 "test.ceu"
-    {/* NODE: Stmts 569 */
+    break;
+#line 129 "test.ceu"
+    }
+#line 129 "test.ceu"
+/* CLEAR: Block (129) */
+#line 129 "test.ceu"
+    }} else {
+/* NODE: Nothing 686 */
+}
 
-#line 130 "test.ceu"
-    {/* NODE: If 568 */
+#line 128 "test.ceu"
+    }
+#line 128 "test.ceu"
+/* CLEAR: Block (128) */
+#line 128 "test.ceu"
+    }
+#line 128 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 130 "test.ceu"
+#line 127 "test.ceu"
+    }
+#line 127 "test.ceu"
+    }
+
+#line 127 "test.ceu"
+/* CLEAR: Loop (127) */
+#line 127 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+_ceu_go->trl = &_ceu_go->org->trls[ 0 ];
+
+#line 127 "test.ceu"
+    }
+#line 127 "test.ceu"
+/* CLEAR: Block (127) */
+#line 127 "test.ceu"
+    }
+#line 127 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
+
+#line 126 "test.ceu"
+/* PAROR JOIN */
+#line 126 "test.ceu"
+    _ceu_go->lbl = RulesTest_ParOr_out_55;
+goto _CEU_GOTO_;
+/*return RET_GOTO;*/
+
+#line 126 "test.ceu"
+case RulesTest_ParOr_sub_2_54:;/* NODE: Block 568 */
+
+#line 134 "test.ceu"
+    {/* NODE: Stmts 567 */
+
+#line 134 "test.ceu"
+    {/* NODE: If 566 */
+
+#line 134 "test.ceu"
     if ((x()>30)) {
-/* NODE: Block 424 */
+/* NODE: Block 432 */
 
-#line 131 "test.ceu"
-    /*  FINALIZE */
-_ceu_go->org->trls[ 5 ].evt   = CEU_IN__CLEAR;
-_ceu_go->org->trls[ 5 ].lbl   = RulesTest_Block__fin_59;
-_ceu_go->org->trls[ 5 ].seqno = _ceu_app->seqno-1; /* awake now */
-
-#line 131 "test.ceu"
-    ((CEU_RulesTest*)_ceu_go->org)->__fin_424_1 = 0;
-#line 131 "test.ceu"
+#line 135 "test.ceu"
     {
-#line 131 "test.ceu"
+#line 135 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 2, (tceu_org_lnk*) &((CEU_RulesTest*)_ceu_go->org)->__lnks_424_2);
+ceu_out_org_trail(_ceu_go->org, 2, (tceu_org_lnk*) &((CEU_RulesTest*)_ceu_go->org)->__lnks_432_2);
 
-#line 131 "test.ceu"
+#line 135 "test.ceu"
     /* switch to blk trail */
 _ceu_go->trl = &_ceu_go->org->trls[ 3 ];
-/* NODE: Stmts 423 */
+/* NODE: Stmts 431 */
 
-#line 131 "test.ceu"
-    {/* NODE: CallStmt 382 */
+#line 135 "test.ceu"
+    {/* NODE: CallStmt 395 */
 
-#line 131 "test.ceu"
-    printf("rulestest starting left\n");/* NODE: Dcl_var 395 */
+#line 135 "test.ceu"
+    printf("rulestest starting left\n");/* NODE: Dcl_var 408 */
 
-#line 132 "test.ceu"
+#line 136 "test.ceu"
 /* start org: left */
-#line 132 "test.ceu"
+#line 136 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->left_3)),2,Class_MoveX,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->left_3)),3,Class_MoveX,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -5822,21 +5879,18 @@ _ceu_go->org, 2);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 132 "test.ceu"
-            _ceu_constr_394(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->left_3)), _ceu_go);
+#line 136 "test.ceu"
+            _ceu_constr_407(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->left_3)), _ceu_go);
 
-#line 132 "test.ceu"
+#line 136 "test.ceu"
         }
 }
 
-#line 132 "test.ceu"
+#line 136 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, RulesTest_Start_cnt_53,((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->left_3)),Class_MoveX);
-case RulesTest_Start_cnt_53:;
-/* NODE: Finalize 400 */
-
-#line 135 "test.ceu"
-    ((CEU_RulesTest*)_ceu_go->org)->__fin_424_1 = 1;/* NODE: ParOr 422 */
+    return ceu_out_org_spawn(_ceu_go, RulesTest_Start_cnt_57,((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->left_3)),Class_MoveX);
+case RulesTest_Start_cnt_57:;
+/* NODE: ParOr 430 */
 
 #line 139 "test.ceu"
 /* ParOr: spawn subs */
@@ -5845,32 +5899,32 @@ case RulesTest_Start_cnt_53:;
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 4 ];
     trl->evt = CEU_IN__STK;
-    trl->lbl = RulesTest_ParOr_sub_2_54;
+    trl->lbl = RulesTest_ParOr_sub_2_58;
     trl->stk = _ceu_go->stki;
 }
-/* NODE: Block 416 */
+/* NODE: Block 424 */
 
 #line 140 "test.ceu"
-    {/* NODE: Stmts 415 */
+    {/* NODE: Stmts 423 */
 
 #line 140 "test.ceu"
-    {/* NODE: Loop 693 */
+    {/* NODE: Loop 691 */
 
 #line 140 "test.ceu"
     for (;;) {
-/* NODE: Stmts 692 */
+/* NODE: Stmts 690 */
 
 #line 140 "test.ceu"
-    {/* NODE: AwaitExt 691 */
+    {/* NODE: AwaitExt 689 */
 
 #line 140 "test.ceu"
         _ceu_go->trl->evt = CEU_IN_TICK;
-    _ceu_go->trl->lbl = RulesTest_Awake_TICK_56;
+    _ceu_go->trl->lbl = RulesTest_Awake_TICK_60;
 
 #line 140 "test.ceu"
     	return RET_HALT;
 #line 140 "test.ceu"
-    case RulesTest_Awake_TICK_56:;
+    case RulesTest_Awake_TICK_60:;
 
 #line 140 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
@@ -5878,26 +5932,26 @@ case RulesTest_Start_cnt_53:;
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Block 413 */
+/* NODE: Block 421 */
 
 #line 141 "test.ceu"
-    {/* NODE: Stmts 412 */
+    {/* NODE: Stmts 420 */
 
 #line 141 "test.ceu"
-    {/* NODE: If 695 */
+    {/* NODE: If 693 */
 
 #line 141 "test.ceu"
     if ((x()<=30)) {
-/* NODE: Block 410 */
+/* NODE: Block 418 */
 
 #line 142 "test.ceu"
-    {/* NODE: Stmts 409 */
+    {/* NODE: Stmts 417 */
 
 #line 142 "test.ceu"
-    {/* NODE: CallStmt 407 */
+    {/* NODE: CallStmt 415 */
 
 #line 142 "test.ceu"
-    printf("left disqualified\n");/* NODE: Break 408 */
+    printf("left disqualified\n");/* NODE: Break 416 */
 
 #line 143 "test.ceu"
     break;
@@ -5907,7 +5961,7 @@ fprintf(stderr, "\tOK!\n");
 /* CLEAR: Block (142) */
 #line 142 "test.ceu"
     }} else {
-/* NODE: Nothing 694 */
+/* NODE: Nothing 692 */
 }
 
 #line 141 "test.ceu"
@@ -5947,34 +6001,34 @@ _ceu_go->trl = &_ceu_go->org->trls[ 3 ];
 #line 139 "test.ceu"
 /* PAROR JOIN */
 #line 139 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_55;
+    _ceu_go->lbl = RulesTest_ParOr_out_59;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
 #line 139 "test.ceu"
-case RulesTest_ParOr_sub_2_54:;/* NODE: Block 421 */
+case RulesTest_ParOr_sub_2_58:;/* NODE: Block 429 */
 
 #line 147 "test.ceu"
-    {/* NODE: Stmts 420 */
+    {/* NODE: Stmts 428 */
 
 #line 147 "test.ceu"
-    {/* NODE: AwaitInt 419 */
+    {/* NODE: AwaitInt 427 */
 
 #line 147 "test.ceu"
-    _CEU_NO_419_:
+    _CEU_NO_427_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = RulesTest_Awake_ok_57;
+    _ceu_go->trl->lbl = RulesTest_Awake_ok_61;
 
 #line 147 "test.ceu"
     	return RET_HALT;
 #line 147 "test.ceu"
-    case RulesTest_Awake_ok_57:;
+    case RulesTest_Awake_ok_61:;
 
 #line 147 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_RulesTest*)_ceu_go->org)->left_3) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_419_;
+        goto _CEU_NO_427_;
     }
 #endif
 
@@ -5999,12 +6053,12 @@ fprintf(stderr, "\tOK!\n");
 #line 139 "test.ceu"
 /* PAROR JOIN */
 #line 139 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_55;
+    _ceu_go->lbl = RulesTest_ParOr_out_59;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
 #line 139 "test.ceu"
-case RulesTest_ParOr_out_55:;
+case RulesTest_ParOr_out_59:;
 #line 139 "test.ceu"
 /* CLEAR: ParOr (139) */
 #line 139 "test.ceu"
@@ -6013,83 +6067,47 @@ case RulesTest_ParOr_out_55:;
     tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_58;
+    trl->lbl = RulesTest_Clear_62;
 }
 return ceu_out_clear(_ceu_go, 4,                     &_ceu_go->org->trls[ 5 ]);
 
-case RulesTest_Clear_58:;
+case RulesTest_Clear_62:;
 
 #line 139 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 3 ];
 
-#line 131 "test.ceu"
+#line 135 "test.ceu"
     }
-#line 131 "test.ceu"
-    _ceu_go->lbl = RulesTest_Block_fin_cnt_60;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 131 "test.ceu"
-case RulesTest_Block__fin_59:;
-#line 131 "test.ceu"
-    if (((CEU_RulesTest*)_ceu_go->org)->__fin_424_1) {
-/* NODE: Finally 399 */
-/* NODE: Block 398 */
-
-#line 136 "test.ceu"
-    {/* NODE: Stmts 397 */
-
-#line 136 "test.ceu"
-    {/* NODE: CallStmt 396 */
-
-#line 136 "test.ceu"
-    cancel_x();
-#line 136 "test.ceu"
-    }
-#line 136 "test.ceu"
-/* CLEAR: Block (136) */
-#line 136 "test.ceu"
-    }
-#line 136 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
-}
-
-#line 131 "test.ceu"
-    	return RET_HALT;
-#line 131 "test.ceu"
-case RulesTest_Block_fin_cnt_60:;
-#line 131 "test.ceu"
-/* CLEAR: Block (131) */
-#line 131 "test.ceu"
+#line 135 "test.ceu"
+/* CLEAR: Block (135) */
+#line 135 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 1 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_61;
+    trl->lbl = RulesTest_Clear_63;
 }
-return ceu_out_clear(_ceu_go, 2,                     &_ceu_go->org->trls[ 8 ]);
+return ceu_out_clear(_ceu_go, 2,                     &_ceu_go->org->trls[ 7 ]);
 
-case RulesTest_Clear_61:;
+case RulesTest_Clear_63:;
 
-#line 131 "test.ceu"
+#line 135 "test.ceu"
     }
-#line 131 "test.ceu"
+#line 135 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 1 ]; */
 } else {
-/* NODE: Block 567 */
+/* NODE: Block 565 */
 
 #line 150 "test.ceu"
-    {/* NODE: Stmts 566 */
+    {/* NODE: Stmts 564 */
 
 #line 150 "test.ceu"
-    {/* NODE: ParOr 565 */
+    {/* NODE: ParOr 563 */
 
 #line 150 "test.ceu"
 /* ParOr: spawn subs */
@@ -6098,32 +6116,32 @@ case RulesTest_Clear_61:;
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 2 ];
     trl->evt = CEU_IN__STK;
-    trl->lbl = RulesTest_ParOr_sub_2_62;
+    trl->lbl = RulesTest_ParOr_sub_2_64;
     trl->stk = _ceu_go->stki;
 }
-/* NODE: Block 440 */
+/* NODE: Block 448 */
 
 #line 151 "test.ceu"
-    {/* NODE: Stmts 439 */
+    {/* NODE: Stmts 447 */
 
 #line 151 "test.ceu"
-    {/* NODE: Loop 698 */
+    {/* NODE: Loop 696 */
 
 #line 151 "test.ceu"
     for (;;) {
-/* NODE: Stmts 697 */
+/* NODE: Stmts 695 */
 
 #line 151 "test.ceu"
-    {/* NODE: AwaitExt 696 */
+    {/* NODE: AwaitExt 694 */
 
 #line 151 "test.ceu"
         _ceu_go->trl->evt = CEU_IN_TICK;
-    _ceu_go->trl->lbl = RulesTest_Awake_TICK_64;
+    _ceu_go->trl->lbl = RulesTest_Awake_TICK_66;
 
 #line 151 "test.ceu"
     	return RET_HALT;
 #line 151 "test.ceu"
-    case RulesTest_Awake_TICK_64:;
+    case RulesTest_Awake_TICK_66:;
 
 #line 151 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
@@ -6131,26 +6149,26 @@ case RulesTest_Clear_61:;
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Block 437 */
+/* NODE: Block 445 */
 
 #line 152 "test.ceu"
-    {/* NODE: Stmts 436 */
+    {/* NODE: Stmts 444 */
 
 #line 152 "test.ceu"
-    {/* NODE: If 700 */
+    {/* NODE: If 698 */
 
 #line 152 "test.ceu"
     if ((x()>30)) {
-/* NODE: Block 434 */
+/* NODE: Block 442 */
 
 #line 153 "test.ceu"
-    {/* NODE: Stmts 433 */
+    {/* NODE: Stmts 441 */
 
 #line 153 "test.ceu"
-    {/* NODE: CallStmt 431 */
+    {/* NODE: CallStmt 439 */
 
 #line 153 "test.ceu"
-    printf("left preempts\n");/* NODE: Break 432 */
+    printf("left preempts\n");/* NODE: Break 440 */
 
 #line 154 "test.ceu"
     break;
@@ -6160,7 +6178,7 @@ fprintf(stderr, "\tOK!\n");
 /* CLEAR: Block (153) */
 #line 153 "test.ceu"
     }} else {
-/* NODE: Nothing 699 */
+/* NODE: Nothing 697 */
 }
 
 #line 152 "test.ceu"
@@ -6200,47 +6218,39 @@ _ceu_go->trl = &_ceu_go->org->trls[ 1 ];
 #line 150 "test.ceu"
 /* PAROR JOIN */
 #line 150 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_63;
+    _ceu_go->lbl = RulesTest_ParOr_out_65;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
 #line 150 "test.ceu"
-case RulesTest_ParOr_sub_2_62:;/* NODE: Block 564 */
+case RulesTest_ParOr_sub_2_64:;/* NODE: Block 562 */
 
 #line 158 "test.ceu"
-    {/* NODE: Stmts 563 */
+    {/* NODE: Stmts 561 */
 
 #line 158 "test.ceu"
-    {/* NODE: If 562 */
+    {/* NODE: If 560 */
 
 #line 158 "test.ceu"
     if ((y()<30)) {
-/* NODE: Block 488 */
+/* NODE: Block 491 */
 
-#line 159 "test.ceu"
-    /*  FINALIZE */
-_ceu_go->org->trls[ 6 ].evt   = CEU_IN__CLEAR;
-_ceu_go->org->trls[ 6 ].lbl   = RulesTest_Block__fin_71;
-_ceu_go->org->trls[ 6 ].seqno = _ceu_app->seqno-1; /* awake now */
-
-#line 159 "test.ceu"
-    ((CEU_RulesTest*)_ceu_go->org)->__fin_488_1 = 0;
 #line 159 "test.ceu"
     {
 #line 159 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 3, (tceu_org_lnk*) &((CEU_RulesTest*)_ceu_go->org)->__lnks_488_3);
+ceu_out_org_trail(_ceu_go->org, 3, (tceu_org_lnk*) &((CEU_RulesTest*)_ceu_go->org)->__lnks_491_3);
 
 #line 159 "test.ceu"
     /* switch to blk trail */
 _ceu_go->trl = &_ceu_go->org->trls[ 4 ];
-/* NODE: Stmts 487 */
+/* NODE: Stmts 490 */
 
 #line 159 "test.ceu"
-    {/* NODE: CallStmt 446 */
+    {/* NODE: CallStmt 454 */
 
 #line 159 "test.ceu"
-    printf("rulestest starting down\n");/* NODE: Dcl_var 459 */
+    printf("rulestest starting down\n");/* NODE: Dcl_var 467 */
 
 #line 160 "test.ceu"
 /* start org: down */
@@ -6250,7 +6260,7 @@ _ceu_go->trl = &_ceu_go->org->trls[ 4 ];
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->down_4)),2,Class_MoveY,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->down_4)),3,Class_MoveY,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -6261,7 +6271,7 @@ _ceu_go->org, 3);
  * indirectly access the offset in the interface. */
 
 #line 160 "test.ceu"
-            _ceu_constr_458(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->down_4)), _ceu_go);
+            _ceu_constr_466(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->down_4)), _ceu_go);
 
 #line 160 "test.ceu"
         }
@@ -6269,221 +6279,105 @@ _ceu_go->org, 3);
 
 #line 160 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, RulesTest_Start_cnt_65,((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->down_4)),Class_MoveY);
-case RulesTest_Start_cnt_65:;
-/* NODE: Finalize 464 */
+    return ceu_out_org_spawn(_ceu_go, RulesTest_Start_cnt_67,((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->down_4)),Class_MoveY);
+case RulesTest_Start_cnt_67:;
+/* NODE: ParOr 489 */
 
 #line 163 "test.ceu"
-    ((CEU_RulesTest*)_ceu_go->org)->__fin_488_1 = 1;/* NODE: ParOr 486 */
-
-#line 166 "test.ceu"
 /* ParOr: spawn subs */
-#line 166 "test.ceu"
+#line 163 "test.ceu"
     /* TODO: function? */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 5 ];
     trl->evt = CEU_IN__STK;
-    trl->lbl = RulesTest_ParOr_sub_2_66;
+    trl->lbl = RulesTest_ParOr_sub_2_68;
     trl->stk = _ceu_go->stki;
 }
+/* NODE: Block 483 */
+
+#line 164 "test.ceu"
+    {/* NODE: Stmts 482 */
+
+#line 164 "test.ceu"
+    {/* NODE: Loop 702 */
+
+#line 164 "test.ceu"
+    for (;;) {
+/* NODE: Stmts 701 */
+
+#line 164 "test.ceu"
+    {/* NODE: AwaitExt 700 */
+
+#line 164 "test.ceu"
+        _ceu_go->trl->evt = CEU_IN_TICK;
+    _ceu_go->trl->lbl = RulesTest_Awake_TICK_70;
+
+#line 164 "test.ceu"
+    	return RET_HALT;
+#line 164 "test.ceu"
+    case RulesTest_Awake_TICK_70:;
+
+#line 164 "test.ceu"
+    #ifdef CEU_DEBUG_TRAILS
+#ifndef CEU_OS
+fprintf(stderr, "\tOK!\n");
+#endif
+#endif
 /* NODE: Block 480 */
 
-#line 167 "test.ceu"
+#line 165 "test.ceu"
     {/* NODE: Stmts 479 */
 
-#line 167 "test.ceu"
-    {/* NODE: Loop 704 */
+#line 165 "test.ceu"
+    {/* NODE: If 704 */
 
-#line 167 "test.ceu"
-    for (;;) {
-/* NODE: Stmts 703 */
-
-#line 167 "test.ceu"
-    {/* NODE: AwaitExt 702 */
-
-#line 167 "test.ceu"
-        _ceu_go->trl->evt = CEU_IN_TICK;
-    _ceu_go->trl->lbl = RulesTest_Awake_TICK_68;
-
-#line 167 "test.ceu"
-    	return RET_HALT;
-#line 167 "test.ceu"
-    case RulesTest_Awake_TICK_68:;
-
-#line 167 "test.ceu"
-    #ifdef CEU_DEBUG_TRAILS
-#ifndef CEU_OS
-fprintf(stderr, "\tOK!\n");
-#endif
-#endif
+#line 165 "test.ceu"
+    if ((y()>=30)) {
 /* NODE: Block 477 */
 
-#line 168 "test.ceu"
+#line 166 "test.ceu"
     {/* NODE: Stmts 476 */
 
-#line 168 "test.ceu"
-    {/* NODE: If 706 */
+#line 166 "test.ceu"
+    {/* NODE: CallStmt 474 */
 
-#line 168 "test.ceu"
-    if ((y()>=30)) {
-/* NODE: Block 474 */
+#line 166 "test.ceu"
+    printf("down disqualified\n");/* NODE: Break 475 */
 
-#line 169 "test.ceu"
-    {/* NODE: Stmts 473 */
-
-#line 169 "test.ceu"
-    {/* NODE: CallStmt 471 */
-
-#line 169 "test.ceu"
-    printf("down disqualified\n");/* NODE: Break 472 */
-
-#line 170 "test.ceu"
+#line 167 "test.ceu"
     break;
-#line 169 "test.ceu"
+#line 166 "test.ceu"
     }
-#line 169 "test.ceu"
-/* CLEAR: Block (169) */
-#line 169 "test.ceu"
+#line 166 "test.ceu"
+/* CLEAR: Block (166) */
+#line 166 "test.ceu"
     }} else {
-/* NODE: Nothing 705 */
+/* NODE: Nothing 703 */
 }
 
-#line 168 "test.ceu"
+#line 165 "test.ceu"
     }
-#line 168 "test.ceu"
-/* CLEAR: Block (168) */
-#line 168 "test.ceu"
+#line 165 "test.ceu"
+/* CLEAR: Block (165) */
+#line 165 "test.ceu"
     }
-#line 168 "test.ceu"
+#line 165 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 4 ]; */
 
-#line 167 "test.ceu"
+#line 164 "test.ceu"
     }
-#line 167 "test.ceu"
+#line 164 "test.ceu"
     }
 
-#line 167 "test.ceu"
-/* CLEAR: Loop (167) */
-#line 167 "test.ceu"
+#line 164 "test.ceu"
+/* CLEAR: Loop (164) */
+#line 164 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 4 ];
 
-#line 167 "test.ceu"
-    }
-#line 167 "test.ceu"
-/* CLEAR: Block (167) */
-#line 167 "test.ceu"
-    }
-#line 167 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 4 ]; */
-
-#line 166 "test.ceu"
-/* PAROR JOIN */
-#line 166 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_67;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 166 "test.ceu"
-case RulesTest_ParOr_sub_2_66:;/* NODE: Block 485 */
-
-#line 174 "test.ceu"
-    {/* NODE: Stmts 484 */
-
-#line 174 "test.ceu"
-    {/* NODE: AwaitInt 483 */
-
-#line 174 "test.ceu"
-    _CEU_NO_483_:
-    _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = RulesTest_Awake_ok_69;
-
-#line 174 "test.ceu"
-    	return RET_HALT;
-#line 174 "test.ceu"
-    case RulesTest_Awake_ok_69:;
-
-#line 174 "test.ceu"
-    #ifdef CEU_ORGS
-    if ((tceu_org*)(&((CEU_RulesTest*)_ceu_go->org)->down_4) != _ceu_go->evto) {
-        _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_483_;
-    }
-#endif
-
-#line 174 "test.ceu"
-    #ifdef CEU_DEBUG_TRAILS
-#ifndef CEU_OS
-fprintf(stderr, "\tOK!\n");
-#endif
-#endif
-
-#line 174 "test.ceu"
-    }
-#line 174 "test.ceu"
-/* CLEAR: Block (174) */
-#line 174 "test.ceu"
-    }
-#line 174 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
-
-#line 166 "test.ceu"
-/* PAROR JOIN */
-#line 166 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_67;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 166 "test.ceu"
-case RulesTest_ParOr_out_67:;
-#line 166 "test.ceu"
-/* CLEAR: ParOr (166) */
-#line 166 "test.ceu"
-    /* trails[1] points to ORG blk */
-{
-    tceu_trl* trl = &_ceu_go->org->trls[ 4 ];
-    trl->evt = CEU_IN__STK;
-    trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_70;
-}
-return ceu_out_clear(_ceu_go, 5,                     &_ceu_go->org->trls[ 6 ]);
-
-case RulesTest_Clear_70:;
-
-#line 166 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-_ceu_go->trl = &_ceu_go->org->trls[ 4 ];
-
-#line 159 "test.ceu"
-    }
-#line 159 "test.ceu"
-    _ceu_go->lbl = RulesTest_Block_fin_cnt_72;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 159 "test.ceu"
-case RulesTest_Block__fin_71:;
-#line 159 "test.ceu"
-    if (((CEU_RulesTest*)_ceu_go->org)->__fin_488_1) {
-/* NODE: Finally 463 */
-/* NODE: Block 462 */
-
-#line 164 "test.ceu"
-    {/* NODE: Stmts 461 */
-
-#line 164 "test.ceu"
-    {/* NODE: CallStmt 460 */
-
-#line 164 "test.ceu"
-    cancel_y();
 #line 164 "test.ceu"
     }
 #line 164 "test.ceu"
@@ -6494,12 +6388,89 @@ case RulesTest_Block__fin_71:;
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 4 ]; */
+
+#line 163 "test.ceu"
+/* PAROR JOIN */
+#line 163 "test.ceu"
+    _ceu_go->lbl = RulesTest_ParOr_out_69;
+goto _CEU_GOTO_;
+/*return RET_GOTO;*/
+
+#line 163 "test.ceu"
+case RulesTest_ParOr_sub_2_68:;/* NODE: Block 488 */
+
+#line 171 "test.ceu"
+    {/* NODE: Stmts 487 */
+
+#line 171 "test.ceu"
+    {/* NODE: AwaitInt 486 */
+
+#line 171 "test.ceu"
+    _CEU_NO_486_:
+    _ceu_go->trl->evt = 2;
+    _ceu_go->trl->lbl = RulesTest_Awake_ok_71;
+
+#line 171 "test.ceu"
+    	return RET_HALT;
+#line 171 "test.ceu"
+    case RulesTest_Awake_ok_71:;
+
+#line 171 "test.ceu"
+    #ifdef CEU_ORGS
+    if ((tceu_org*)(&((CEU_RulesTest*)_ceu_go->org)->down_4) != _ceu_go->evto) {
+        _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
+        goto _CEU_NO_486_;
+    }
+#endif
+
+#line 171 "test.ceu"
+    #ifdef CEU_DEBUG_TRAILS
+#ifndef CEU_OS
+fprintf(stderr, "\tOK!\n");
+#endif
+#endif
+
+#line 171 "test.ceu"
+    }
+#line 171 "test.ceu"
+/* CLEAR: Block (171) */
+#line 171 "test.ceu"
+    }
+#line 171 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
+
+#line 163 "test.ceu"
+/* PAROR JOIN */
+#line 163 "test.ceu"
+    _ceu_go->lbl = RulesTest_ParOr_out_69;
+goto _CEU_GOTO_;
+/*return RET_GOTO;*/
+
+#line 163 "test.ceu"
+case RulesTest_ParOr_out_69:;
+#line 163 "test.ceu"
+/* CLEAR: ParOr (163) */
+#line 163 "test.ceu"
+    /* trails[1] points to ORG blk */
+{
+    tceu_trl* trl = &_ceu_go->org->trls[ 4 ];
+    trl->evt = CEU_IN__STK;
+    trl->stk = _ceu_go->stki;
+    trl->lbl = RulesTest_Clear_72;
 }
+return ceu_out_clear(_ceu_go, 5,                     &_ceu_go->org->trls[ 6 ]);
+
+case RulesTest_Clear_72:;
+
+#line 163 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+_ceu_go->trl = &_ceu_go->org->trls[ 4 ];
 
 #line 159 "test.ceu"
-    	return RET_HALT;
-#line 159 "test.ceu"
-case RulesTest_Block_fin_cnt_72:;
+    }
 #line 159 "test.ceu"
 /* CLEAR: Block (159) */
 #line 159 "test.ceu"
@@ -6510,7 +6481,7 @@ case RulesTest_Block_fin_cnt_72:;
     trl->stk = _ceu_go->stki;
     trl->lbl = RulesTest_Clear_73;
 }
-return ceu_out_clear(_ceu_go, 3,                     &_ceu_go->org->trls[ 8 ]);
+return ceu_out_clear(_ceu_go, 3,                     &_ceu_go->org->trls[ 7 ]);
 
 case RulesTest_Clear_73:;
 
@@ -6521,17 +6492,17 @@ case RulesTest_Clear_73:;
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
 } else {
-/* NODE: Block 561 */
+/* NODE: Block 559 */
 
-#line 177 "test.ceu"
-    {/* NODE: Stmts 560 */
+#line 174 "test.ceu"
+    {/* NODE: Stmts 558 */
 
-#line 177 "test.ceu"
-    {/* NODE: ParOr 559 */
+#line 174 "test.ceu"
+    {/* NODE: ParOr 557 */
 
-#line 177 "test.ceu"
+#line 174 "test.ceu"
 /* ParOr: spawn subs */
-#line 177 "test.ceu"
+#line 174 "test.ceu"
     /* TODO: function? */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
@@ -6539,156 +6510,148 @@ case RulesTest_Clear_73:;
     trl->lbl = RulesTest_ParOr_sub_2_74;
     trl->stk = _ceu_go->stki;
 }
-/* NODE: Block 504 */
+/* NODE: Block 507 */
 
-#line 178 "test.ceu"
-    {/* NODE: Stmts 503 */
+#line 175 "test.ceu"
+    {/* NODE: Stmts 506 */
 
-#line 178 "test.ceu"
-    {/* NODE: Loop 709 */
+#line 175 "test.ceu"
+    {/* NODE: Loop 707 */
 
-#line 178 "test.ceu"
+#line 175 "test.ceu"
     for (;;) {
-/* NODE: Stmts 708 */
+/* NODE: Stmts 706 */
 
-#line 178 "test.ceu"
-    {/* NODE: AwaitExt 707 */
+#line 175 "test.ceu"
+    {/* NODE: AwaitExt 705 */
 
-#line 178 "test.ceu"
+#line 175 "test.ceu"
         _ceu_go->trl->evt = CEU_IN_TICK;
     _ceu_go->trl->lbl = RulesTest_Awake_TICK_76;
 
-#line 178 "test.ceu"
+#line 175 "test.ceu"
     	return RET_HALT;
-#line 178 "test.ceu"
+#line 175 "test.ceu"
     case RulesTest_Awake_TICK_76:;
 
-#line 178 "test.ceu"
+#line 175 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
+/* NODE: Block 504 */
+
+#line 176 "test.ceu"
+    {/* NODE: Stmts 503 */
+
+#line 176 "test.ceu"
+    {/* NODE: If 709 */
+
+#line 176 "test.ceu"
+    if ((y()<30)) {
 /* NODE: Block 501 */
 
-#line 179 "test.ceu"
+#line 177 "test.ceu"
     {/* NODE: Stmts 500 */
 
-#line 179 "test.ceu"
-    {/* NODE: If 711 */
+#line 177 "test.ceu"
+    {/* NODE: CallStmt 498 */
 
-#line 179 "test.ceu"
-    if ((y()<30)) {
-/* NODE: Block 498 */
+#line 177 "test.ceu"
+    printf("down preempts\n");/* NODE: Break 499 */
 
-#line 180 "test.ceu"
-    {/* NODE: Stmts 497 */
-
-#line 180 "test.ceu"
-    {/* NODE: CallStmt 495 */
-
-#line 180 "test.ceu"
-    printf("down preempts\n");/* NODE: Break 496 */
-
-#line 181 "test.ceu"
+#line 178 "test.ceu"
     break;
-#line 180 "test.ceu"
+#line 177 "test.ceu"
     }
-#line 180 "test.ceu"
-/* CLEAR: Block (180) */
-#line 180 "test.ceu"
+#line 177 "test.ceu"
+/* CLEAR: Block (177) */
+#line 177 "test.ceu"
     }} else {
-/* NODE: Nothing 710 */
+/* NODE: Nothing 708 */
 }
 
-#line 179 "test.ceu"
+#line 176 "test.ceu"
     }
-#line 179 "test.ceu"
-/* CLEAR: Block (179) */
-#line 179 "test.ceu"
+#line 176 "test.ceu"
+/* CLEAR: Block (176) */
+#line 176 "test.ceu"
     }
-#line 179 "test.ceu"
+#line 176 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
 
-#line 178 "test.ceu"
+#line 175 "test.ceu"
     }
-#line 178 "test.ceu"
+#line 175 "test.ceu"
     }
 
-#line 178 "test.ceu"
-/* CLEAR: Loop (178) */
-#line 178 "test.ceu"
+#line 175 "test.ceu"
+/* CLEAR: Loop (175) */
+#line 175 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 2 ];
 
-#line 178 "test.ceu"
+#line 175 "test.ceu"
     }
-#line 178 "test.ceu"
-/* CLEAR: Block (178) */
-#line 178 "test.ceu"
+#line 175 "test.ceu"
+/* CLEAR: Block (175) */
+#line 175 "test.ceu"
     }
-#line 178 "test.ceu"
+#line 175 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
 
-#line 177 "test.ceu"
+#line 174 "test.ceu"
 /* PAROR JOIN */
-#line 177 "test.ceu"
+#line 174 "test.ceu"
     _ceu_go->lbl = RulesTest_ParOr_out_75;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 177 "test.ceu"
-case RulesTest_ParOr_sub_2_74:;/* NODE: Block 558 */
+#line 174 "test.ceu"
+case RulesTest_ParOr_sub_2_74:;/* NODE: Block 556 */
 
-#line 185 "test.ceu"
-    {/* NODE: Stmts 557 */
+#line 182 "test.ceu"
+    {/* NODE: Stmts 555 */
 
-#line 185 "test.ceu"
-    {/* NODE: If 556 */
+#line 182 "test.ceu"
+    {/* NODE: If 554 */
 
-#line 185 "test.ceu"
+#line 182 "test.ceu"
     if ((y()>30)) {
-/* NODE: Block 552 */
+/* NODE: Block 550 */
 
-#line 186 "test.ceu"
-    /*  FINALIZE */
-_ceu_go->org->trls[ 7 ].evt   = CEU_IN__CLEAR;
-_ceu_go->org->trls[ 7 ].lbl   = RulesTest_Block__fin_83;
-_ceu_go->org->trls[ 7 ].seqno = _ceu_app->seqno-1; /* awake now */
-
-#line 186 "test.ceu"
-    ((CEU_RulesTest*)_ceu_go->org)->__fin_552_1 = 0;
-#line 186 "test.ceu"
+#line 183 "test.ceu"
     {
-#line 186 "test.ceu"
+#line 183 "test.ceu"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 4, (tceu_org_lnk*) &((CEU_RulesTest*)_ceu_go->org)->__lnks_552_4);
+ceu_out_org_trail(_ceu_go->org, 4, (tceu_org_lnk*) &((CEU_RulesTest*)_ceu_go->org)->__lnks_550_4);
 
-#line 186 "test.ceu"
+#line 183 "test.ceu"
     /* switch to blk trail */
 _ceu_go->trl = &_ceu_go->org->trls[ 5 ];
-/* NODE: Stmts 551 */
+/* NODE: Stmts 549 */
 
-#line 186 "test.ceu"
-    {/* NODE: CallStmt 510 */
+#line 183 "test.ceu"
+    {/* NODE: CallStmt 513 */
 
-#line 186 "test.ceu"
-    printf("rulestest starting up\n");/* NODE: Dcl_var 523 */
+#line 183 "test.ceu"
+    printf("rulestest starting up\n");/* NODE: Dcl_var 526 */
 
-#line 187 "test.ceu"
+#line 184 "test.ceu"
 /* start org: up */
-#line 187 "test.ceu"
+#line 184 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->up_5)),2,Class_MoveY,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->up_5)),3,Class_MoveY,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -6698,25 +6661,22 @@ _ceu_go->org, 4);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 187 "test.ceu"
-            _ceu_constr_522(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->up_5)), _ceu_go);
+#line 184 "test.ceu"
+            _ceu_constr_525(_ceu_app, ((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->up_5)), _ceu_go);
 
-#line 187 "test.ceu"
+#line 184 "test.ceu"
         }
 }
 
-#line 187 "test.ceu"
+#line 184 "test.ceu"
     /* TODO: CEU_OS */
     return ceu_out_org_spawn(_ceu_go, RulesTest_Start_cnt_77,((tceu_org*) (&((CEU_RulesTest*)_ceu_go->org)->up_5)),Class_MoveY);
 case RulesTest_Start_cnt_77:;
-/* NODE: Finalize 528 */
+/* NODE: ParOr 548 */
 
-#line 190 "test.ceu"
-    ((CEU_RulesTest*)_ceu_go->org)->__fin_552_1 = 1;/* NODE: ParOr 550 */
-
-#line 193 "test.ceu"
+#line 187 "test.ceu"
 /* ParOr: spawn subs */
-#line 193 "test.ceu"
+#line 187 "test.ceu"
     /* TODO: function? */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 6 ];
@@ -6724,67 +6684,142 @@ case RulesTest_Start_cnt_77:;
     trl->lbl = RulesTest_ParOr_sub_2_78;
     trl->stk = _ceu_go->stki;
 }
-/* NODE: Block 544 */
+/* NODE: Block 542 */
 
-#line 194 "test.ceu"
-    {/* NODE: Stmts 543 */
+#line 188 "test.ceu"
+    {/* NODE: Stmts 541 */
 
-#line 194 "test.ceu"
-    {/* NODE: Loop 715 */
+#line 188 "test.ceu"
+    {/* NODE: Loop 713 */
 
-#line 194 "test.ceu"
+#line 188 "test.ceu"
     for (;;) {
-/* NODE: Stmts 714 */
+/* NODE: Stmts 712 */
 
-#line 194 "test.ceu"
-    {/* NODE: AwaitExt 713 */
+#line 188 "test.ceu"
+    {/* NODE: AwaitExt 711 */
 
-#line 194 "test.ceu"
+#line 188 "test.ceu"
         _ceu_go->trl->evt = CEU_IN_TICK;
     _ceu_go->trl->lbl = RulesTest_Awake_TICK_80;
 
-#line 194 "test.ceu"
+#line 188 "test.ceu"
     	return RET_HALT;
-#line 194 "test.ceu"
+#line 188 "test.ceu"
     case RulesTest_Awake_TICK_80:;
 
-#line 194 "test.ceu"
+#line 188 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Block 541 */
+/* NODE: Block 539 */
 
-#line 195 "test.ceu"
-    {/* NODE: Stmts 540 */
+#line 189 "test.ceu"
+    {/* NODE: Stmts 538 */
 
-#line 195 "test.ceu"
-    {/* NODE: If 717 */
+#line 189 "test.ceu"
+    {/* NODE: If 715 */
 
-#line 195 "test.ceu"
+#line 189 "test.ceu"
     if ((y()<=30)) {
-/* NODE: Block 538 */
+/* NODE: Block 536 */
 
-#line 196 "test.ceu"
-    {/* NODE: Stmts 537 */
+#line 190 "test.ceu"
+    {/* NODE: Stmts 535 */
 
-#line 196 "test.ceu"
-    {/* NODE: CallStmt 535 */
+#line 190 "test.ceu"
+    {/* NODE: CallStmt 533 */
 
-#line 196 "test.ceu"
-    printf("up disqualified\n");/* NODE: Break 536 */
+#line 190 "test.ceu"
+    printf("up disqualified\n");/* NODE: Break 534 */
 
-#line 197 "test.ceu"
+#line 191 "test.ceu"
     break;
-#line 196 "test.ceu"
+#line 190 "test.ceu"
     }
-#line 196 "test.ceu"
-/* CLEAR: Block (196) */
-#line 196 "test.ceu"
+#line 190 "test.ceu"
+/* CLEAR: Block (190) */
+#line 190 "test.ceu"
     }} else {
-/* NODE: Nothing 716 */
+/* NODE: Nothing 714 */
 }
+
+#line 189 "test.ceu"
+    }
+#line 189 "test.ceu"
+/* CLEAR: Block (189) */
+#line 189 "test.ceu"
+    }
+#line 189 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
+
+#line 188 "test.ceu"
+    }
+#line 188 "test.ceu"
+    }
+
+#line 188 "test.ceu"
+/* CLEAR: Loop (188) */
+#line 188 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+_ceu_go->trl = &_ceu_go->org->trls[ 5 ];
+
+#line 188 "test.ceu"
+    }
+#line 188 "test.ceu"
+/* CLEAR: Block (188) */
+#line 188 "test.ceu"
+    }
+#line 188 "test.ceu"
+    /* switch to 1st trail */
+/* TODO: only if not joining with outer prio */
+/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
+
+#line 187 "test.ceu"
+/* PAROR JOIN */
+#line 187 "test.ceu"
+    _ceu_go->lbl = RulesTest_ParOr_out_79;
+goto _CEU_GOTO_;
+/*return RET_GOTO;*/
+
+#line 187 "test.ceu"
+case RulesTest_ParOr_sub_2_78:;/* NODE: Block 547 */
+
+#line 195 "test.ceu"
+    {/* NODE: Stmts 546 */
+
+#line 195 "test.ceu"
+    {/* NODE: AwaitInt 545 */
+
+#line 195 "test.ceu"
+    _CEU_NO_545_:
+    _ceu_go->trl->evt = 2;
+    _ceu_go->trl->lbl = RulesTest_Awake_ok_81;
+
+#line 195 "test.ceu"
+    	return RET_HALT;
+#line 195 "test.ceu"
+    case RulesTest_Awake_ok_81:;
+
+#line 195 "test.ceu"
+    #ifdef CEU_ORGS
+    if ((tceu_org*)(&((CEU_RulesTest*)_ceu_go->org)->up_5) != _ceu_go->evto) {
+        _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
+        goto _CEU_NO_545_;
+    }
+#endif
+
+#line 195 "test.ceu"
+    #ifdef CEU_DEBUG_TRAILS
+#ifndef CEU_OS
+fprintf(stderr, "\tOK!\n");
+#endif
+#endif
 
 #line 195 "test.ceu"
     }
@@ -6795,95 +6830,20 @@ fprintf(stderr, "\tOK!\n");
 #line 195 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
-
-#line 194 "test.ceu"
-    }
-#line 194 "test.ceu"
-    }
-
-#line 194 "test.ceu"
-/* CLEAR: Loop (194) */
-#line 194 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-_ceu_go->trl = &_ceu_go->org->trls[ 5 ];
-
-#line 194 "test.ceu"
-    }
-#line 194 "test.ceu"
-/* CLEAR: Block (194) */
-#line 194 "test.ceu"
-    }
-#line 194 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
-
-#line 193 "test.ceu"
-/* PAROR JOIN */
-#line 193 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_79;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 193 "test.ceu"
-case RulesTest_ParOr_sub_2_78:;/* NODE: Block 549 */
-
-#line 201 "test.ceu"
-    {/* NODE: Stmts 548 */
-
-#line 201 "test.ceu"
-    {/* NODE: AwaitInt 547 */
-
-#line 201 "test.ceu"
-    _CEU_NO_547_:
-    _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = RulesTest_Awake_ok_81;
-
-#line 201 "test.ceu"
-    	return RET_HALT;
-#line 201 "test.ceu"
-    case RulesTest_Awake_ok_81:;
-
-#line 201 "test.ceu"
-    #ifdef CEU_ORGS
-    if ((tceu_org*)(&((CEU_RulesTest*)_ceu_go->org)->up_5) != _ceu_go->evto) {
-        _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_547_;
-    }
-#endif
-
-#line 201 "test.ceu"
-    #ifdef CEU_DEBUG_TRAILS
-#ifndef CEU_OS
-fprintf(stderr, "\tOK!\n");
-#endif
-#endif
-
-#line 201 "test.ceu"
-    }
-#line 201 "test.ceu"
-/* CLEAR: Block (201) */
-#line 201 "test.ceu"
-    }
-#line 201 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 6 ]; */
 
-#line 193 "test.ceu"
+#line 187 "test.ceu"
 /* PAROR JOIN */
-#line 193 "test.ceu"
+#line 187 "test.ceu"
     _ceu_go->lbl = RulesTest_ParOr_out_79;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 193 "test.ceu"
+#line 187 "test.ceu"
 case RulesTest_ParOr_out_79:;
-#line 193 "test.ceu"
-/* CLEAR: ParOr (193) */
-#line 193 "test.ceu"
+#line 187 "test.ceu"
+/* CLEAR: ParOr (187) */
+#line 187 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 5 ];
@@ -6895,133 +6855,97 @@ return ceu_out_clear(_ceu_go, 6,                     &_ceu_go->org->trls[ 7 ]);
 
 case RulesTest_Clear_82:;
 
-#line 193 "test.ceu"
+#line 187 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 5 ];
 
-#line 186 "test.ceu"
+#line 183 "test.ceu"
     }
-#line 186 "test.ceu"
-    _ceu_go->lbl = RulesTest_Block_fin_cnt_84;
-goto _CEU_GOTO_;
-/*return RET_GOTO;*/
-
-#line 186 "test.ceu"
-case RulesTest_Block__fin_83:;
-#line 186 "test.ceu"
-    if (((CEU_RulesTest*)_ceu_go->org)->__fin_552_1) {
-/* NODE: Finally 527 */
-/* NODE: Block 526 */
-
-#line 191 "test.ceu"
-    {/* NODE: Stmts 525 */
-
-#line 191 "test.ceu"
-    {/* NODE: CallStmt 524 */
-
-#line 191 "test.ceu"
-    cancel_y();
-#line 191 "test.ceu"
-    }
-#line 191 "test.ceu"
-/* CLEAR: Block (191) */
-#line 191 "test.ceu"
-    }
-#line 191 "test.ceu"
-    /* switch to 1st trail */
-/* TODO: only if not joining with outer prio */
-/*_ceu_go->trl = &_ceu_go->org->trls[ 5 ]; */
-}
-
-#line 186 "test.ceu"
-    	return RET_HALT;
-#line 186 "test.ceu"
-case RulesTest_Block_fin_cnt_84:;
-#line 186 "test.ceu"
-/* CLEAR: Block (186) */
-#line 186 "test.ceu"
+#line 183 "test.ceu"
+/* CLEAR: Block (183) */
+#line 183 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 3 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_85;
+    trl->lbl = RulesTest_Clear_83;
 }
-return ceu_out_clear(_ceu_go, 4,                     &_ceu_go->org->trls[ 8 ]);
+return ceu_out_clear(_ceu_go, 4,                     &_ceu_go->org->trls[ 7 ]);
 
-case RulesTest_Clear_85:;
+case RulesTest_Clear_83:;
 
-#line 186 "test.ceu"
+#line 183 "test.ceu"
     }
-#line 186 "test.ceu"
+#line 183 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
 } else {
-/* NODE: Block 555 */
+/* NODE: Block 553 */
 
-#line 204 "test.ceu"
-    {/* NODE: Stmts 554 */
+#line 198 "test.ceu"
+    {/* NODE: Stmts 552 */
 
-#line 204 "test.ceu"
-    {/* NODE: Break 553 */
+#line 198 "test.ceu"
+    {/* NODE: Break 551 */
 
-#line 204 "test.ceu"
+#line 198 "test.ceu"
     break;
-#line 204 "test.ceu"
+#line 198 "test.ceu"
     }
-#line 204 "test.ceu"
-/* CLEAR: Block (204) */
-#line 204 "test.ceu"
+#line 198 "test.ceu"
+/* CLEAR: Block (198) */
+#line 198 "test.ceu"
     }}
 
-#line 185 "test.ceu"
+#line 182 "test.ceu"
     }
-#line 185 "test.ceu"
-/* CLEAR: Block (185) */
-#line 185 "test.ceu"
+#line 182 "test.ceu"
+/* CLEAR: Block (182) */
+#line 182 "test.ceu"
     }
-#line 185 "test.ceu"
+#line 182 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 3 ]; */
 
-#line 177 "test.ceu"
+#line 174 "test.ceu"
 /* PAROR JOIN */
-#line 177 "test.ceu"
+#line 174 "test.ceu"
     _ceu_go->lbl = RulesTest_ParOr_out_75;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 177 "test.ceu"
+#line 174 "test.ceu"
 case RulesTest_ParOr_out_75:;
-#line 177 "test.ceu"
-/* CLEAR: ParOr (177) */
-#line 177 "test.ceu"
+#line 174 "test.ceu"
+/* CLEAR: ParOr (174) */
+#line 174 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 2 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_86;
+    trl->lbl = RulesTest_Clear_84;
 }
-return ceu_out_clear(_ceu_go, 3,                     &_ceu_go->org->trls[ 8 ]);
+return ceu_out_clear(_ceu_go, 3,                     &_ceu_go->org->trls[ 7 ]);
 
-case RulesTest_Clear_86:;
+case RulesTest_Clear_84:;
 
-#line 177 "test.ceu"
+#line 174 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 2 ];
 
-#line 177 "test.ceu"
+#line 174 "test.ceu"
     }
-#line 177 "test.ceu"
-/* CLEAR: Block (177) */
-#line 177 "test.ceu"
+#line 174 "test.ceu"
+/* CLEAR: Block (174) */
+#line 174 "test.ceu"
     }
-#line 177 "test.ceu"
+#line 174 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 2 ]; */
@@ -7041,12 +6965,12 @@ _ceu_go->trl = &_ceu_go->org->trls[ 2 ];
 #line 150 "test.ceu"
 /* PAROR JOIN */
 #line 150 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_63;
+    _ceu_go->lbl = RulesTest_ParOr_out_65;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
 #line 150 "test.ceu"
-case RulesTest_ParOr_out_63:;
+case RulesTest_ParOr_out_65:;
 #line 150 "test.ceu"
 /* CLEAR: ParOr (150) */
 #line 150 "test.ceu"
@@ -7055,11 +6979,11 @@ case RulesTest_ParOr_out_63:;
     tceu_trl* trl = &_ceu_go->org->trls[ 1 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_87;
+    trl->lbl = RulesTest_Clear_85;
 }
-return ceu_out_clear(_ceu_go, 2,                     &_ceu_go->org->trls[ 8 ]);
+return ceu_out_clear(_ceu_go, 2,                     &_ceu_go->org->trls[ 7 ]);
 
-case RulesTest_Clear_87:;
+case RulesTest_Clear_85:;
 
 #line 150 "test.ceu"
     /* switch to 1st trail */
@@ -7078,101 +7002,101 @@ _ceu_go->trl = &_ceu_go->org->trls[ 1 ];
 /*_ceu_go->trl = &_ceu_go->org->trls[ 1 ]; */
 }
 
-#line 130 "test.ceu"
+#line 134 "test.ceu"
     }
-#line 130 "test.ceu"
-/* CLEAR: Block (130) */
-#line 130 "test.ceu"
+#line 134 "test.ceu"
+/* CLEAR: Block (134) */
+#line 134 "test.ceu"
     }
-#line 130 "test.ceu"
+#line 134 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 1 ]; */
 
-#line 122 "test.ceu"
+#line 126 "test.ceu"
 /* PAROR JOIN */
-#line 122 "test.ceu"
-    _ceu_go->lbl = RulesTest_ParOr_out_51;
+#line 126 "test.ceu"
+    _ceu_go->lbl = RulesTest_ParOr_out_55;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 122 "test.ceu"
-case RulesTest_ParOr_out_51:;
-#line 122 "test.ceu"
-/* CLEAR: ParOr (122) */
-#line 122 "test.ceu"
+#line 126 "test.ceu"
+case RulesTest_ParOr_out_55:;
+#line 126 "test.ceu"
+/* CLEAR: ParOr (126) */
+#line 126 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_88;
+    trl->lbl = RulesTest_Clear_86;
 }
-return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 8 ]);
+return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 7 ]);
 
-case RulesTest_Clear_88:;
+case RulesTest_Clear_86:;
 
-#line 122 "test.ceu"
+#line 126 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 0 ];
 
-#line 122 "test.ceu"
+#line 126 "test.ceu"
     }
-#line 122 "test.ceu"
-/* CLEAR: Block (122) */
-#line 122 "test.ceu"
+#line 126 "test.ceu"
+/* CLEAR: Block (126) */
+#line 126 "test.ceu"
     }
-#line 122 "test.ceu"
+#line 126 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 }
 
-#line 102 "test.ceu"
+#line 110 "test.ceu"
     }
-#line 102 "test.ceu"
-/* CLEAR: Block (102) */
-#line 102 "test.ceu"
+#line 110 "test.ceu"
+/* CLEAR: Block (110) */
+#line 110 "test.ceu"
     }
-#line 102 "test.ceu"
+#line 110 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 101 "test.ceu"
+#line 109 "test.ceu"
     }
 
-#line 101 "test.ceu"
-/* CLEAR: Loop (101) */
-#line 101 "test.ceu"
+#line 109 "test.ceu"
+/* CLEAR: Loop (109) */
+#line 109 "test.ceu"
     /* trails[1] points to ORG blk */
 {
     tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = RulesTest_Clear_89;
+    trl->lbl = RulesTest_Clear_87;
 }
-return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 8 ]);
+return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 7 ]);
 
-case RulesTest_Clear_89:;
+case RulesTest_Clear_87:;
 
-#line 101 "test.ceu"
+#line 109 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 _ceu_go->trl = &_ceu_go->org->trls[ 0 ];
-/* NODE: CallStmt 578 */
+/* NODE: CallStmt 576 */
 
-#line 213 "test.ceu"
-    assert((x()==30));/* NODE: CallStmt 579 */
+#line 207 "test.ceu"
+    assert((x()==30));/* NODE: CallStmt 577 */
 
-#line 214 "test.ceu"
-    assert((y()==30));/* NODE: CallStmt 580 */
+#line 208 "test.ceu"
+    assert((y()==30));/* NODE: CallStmt 578 */
 
-#line 215 "test.ceu"
-    printf("rulestest done\n");/* NODE: EmitInt 583 */
+#line 209 "test.ceu"
+    printf("rulestest done\n");/* NODE: EmitInt 581 */
 
-#line 216 "test.ceu"
+#line 210 "test.ceu"
     _ceu_go->stk[_ceu_go->stki].evtp = _ceu_go->evtp;
 #ifdef CEU_INTS
 #ifdef CEU_ORGS
@@ -7183,7 +7107,7 @@ _ceu_go->stk[_ceu_go->stki].evt  = _ceu_go->evt;    /* 3rd (stk) other trails */
 
 _ceu_go->trl->evt = CEU_IN__STK;
 _ceu_go->trl->stk = _ceu_go->stki++;                /* 2nd (stk) me */
-_ceu_go->trl->lbl = RulesTest_EmitInt_cont_90;
+_ceu_go->trl->lbl = RulesTest_EmitInt_cont_88;
                                             /* 1st (stk+1) my lsts */
 /* TRIGGER EVENT */
 _ceu_go->evt  = 2;
@@ -7191,38 +7115,38 @@ _ceu_go->evt  = 2;
 _ceu_go->evto = (tceu_org*) ((CEU_RulesTest*)_ceu_go->org);
 #endif
 
-#line 216 "test.ceu"
+#line 210 "test.ceu"
     #ifdef CEU_ORGS
 _ceu_go->org = _ceu_app->data;   /* TODO(speed): check if is_ifc */
 #endif
 /*goto _CEU_CALL_ORG_;*/
 return RET_ORG;
 
-case RulesTest_EmitInt_cont_90:;
+case RulesTest_EmitInt_cont_88:;
 
-#line 100 "test.ceu"
+#line 108 "test.ceu"
     }
-#line 100 "test.ceu"
-/* CLEAR: Block (100) */
-#line 100 "test.ceu"
+#line 108 "test.ceu"
+/* CLEAR: Block (108) */
+#line 108 "test.ceu"
     }
-#line 100 "test.ceu"
+#line 108 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 97 "test.ceu"
+#line 105 "test.ceu"
     }
-#line 97 "test.ceu"
-/* CLEAR: Block (97) */
-#line 97 "test.ceu"
+#line 105 "test.ceu"
+/* CLEAR: Block (105) */
+#line 105 "test.ceu"
     }
-#line 97 "test.ceu"
+#line 105 "test.ceu"
     /* switch to 1st trail */
 /* TODO: only if not joining with outer prio */
 /*_ceu_go->trl = &_ceu_go->org->trls[ 0 ]; */
 
-#line 97 "test.ceu"
+#line 105 "test.ceu"
     #ifdef CEU_NEWS
 if (_ceu_go->org->isDyn) {
     _ceu_go->org->isAlive = 0;
@@ -7230,7 +7154,7 @@ if (_ceu_go->org->isDyn) {
 }
 #endif
 
-#line 97 "test.ceu"
+#line 105 "test.ceu"
     	return RET_HALT;/* NODE: Dcl_cls 5 */
 
 #line 1 "_ceu_cpp_test.ceu.in"
@@ -7239,141 +7163,141 @@ case Class_Main:;
     #ifdef CEU_IFCS
 _ceu_go->org->cls = 5;
 #endif
-/* NODE: Block 729 */
+/* NODE: Block 727 */
 
 #line 1 "_ceu_cpp_test.ceu.in"
-    {/* NODE: Stmts 728 */
+    {/* NODE: Stmts 726 */
 
 #line 1 "_ceu_cpp_test.ceu.in"
-    {/* NODE: Nothing 612 */
-/* NODE: Block 606 */
+    {/* NODE: Nothing 610 */
+/* NODE: Block 604 */
 
 #line 1 "_ceu_cpp_test.ceu.in"
-    {/* NODE: Stmts 605 */
+    {/* NODE: Stmts 603 */
 
 #line 1 "_ceu_cpp_test.ceu.in"
-    {/* NODE: Dcl_var 602 */
-/* NODE: SetBlock 604 */
-/* NODE: Block 600 */
+    {/* NODE: Dcl_var 600 */
+/* NODE: SetBlock 602 */
+/* NODE: Block 598 */
 
 #line 1 "_ceu_cpp_test.ceu.in"
     {
 #line 1 "_ceu_cpp_test.ceu.in"
     /* TODO: CEU_OS */
-ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_Main*)_ceu_go->org)->__lnks_600_1);
+ceu_out_org_trail(_ceu_go->org, 1, (tceu_org_lnk*) &((CEU_Main*)_ceu_go->org)->__lnks_598_1);
 
 #line 1 "_ceu_cpp_test.ceu.in"
     /* switch to blk trail */
 _ceu_go->trl = &_ceu_go->org->trls[ 2 ];
-/* NODE: Stmts 599 */
+/* NODE: Stmts 597 */
 
 #line 1 "_ceu_cpp_test.ceu.in"
-    {/* NODE: Stmts 596 */
+    {/* NODE: Stmts 594 */
 
 #line 4 "test.ceu"
-    {/* NODE: Stmts 617 */
+    {/* NODE: Stmts 615 */
 
 #line 4 "test.ceu"
-    {/* NODE: Nothing 732 */
+    {/* NODE: Nothing 730 */
 
 #line 4 "test.ceu"
+    }/* NODE: Stmts 617 */
+
+#line 5 "test.ceu"
+    {/* NODE: Nothing 731 */
+
+#line 5 "test.ceu"
     }/* NODE: Stmts 619 */
 
-#line 5 "test.ceu"
-    {/* NODE: Nothing 733 */
+#line 6 "test.ceu"
+    {/* NODE: Nothing 732 */
 
-#line 5 "test.ceu"
+#line 6 "test.ceu"
     }/* NODE: Stmts 621 */
 
-#line 6 "test.ceu"
-    {/* NODE: Nothing 734 */
+#line 7 "test.ceu"
+    {/* NODE: Nothing 733 */
 
-#line 6 "test.ceu"
+#line 7 "test.ceu"
     }/* NODE: Stmts 623 */
 
-#line 7 "test.ceu"
-    {/* NODE: Nothing 735 */
+#line 8 "test.ceu"
+    {/* NODE: Nothing 734 */
 
-#line 7 "test.ceu"
+#line 8 "test.ceu"
     }/* NODE: Stmts 625 */
 
-#line 8 "test.ceu"
-    {/* NODE: Nothing 736 */
+#line 9 "test.ceu"
+    {/* NODE: Nothing 735 */
 
-#line 8 "test.ceu"
+#line 9 "test.ceu"
     }/* NODE: Stmts 627 */
 
-#line 9 "test.ceu"
-    {/* NODE: Nothing 737 */
+#line 10 "test.ceu"
+    {/* NODE: Nothing 736 */
 
-#line 9 "test.ceu"
+#line 10 "test.ceu"
     }/* NODE: Stmts 629 */
 
-#line 10 "test.ceu"
-    {/* NODE: Nothing 738 */
+#line 12 "test.ceu"
+    {/* NODE: Nothing 737 */
 
-#line 10 "test.ceu"
+#line 12 "test.ceu"
     }/* NODE: Stmts 631 */
 
-#line 12 "test.ceu"
-    {/* NODE: Nothing 739 */
+#line 13 "test.ceu"
+    {/* NODE: Nothing 738 */
 
-#line 12 "test.ceu"
+#line 13 "test.ceu"
     }/* NODE: Stmts 633 */
 
-#line 13 "test.ceu"
-    {/* NODE: Nothing 740 */
+#line 14 "test.ceu"
+    {/* NODE: Nothing 739 */
 
-#line 13 "test.ceu"
+#line 14 "test.ceu"
     }/* NODE: Stmts 635 */
 
-#line 14 "test.ceu"
-    {/* NODE: Nothing 741 */
-
-#line 14 "test.ceu"
-    }/* NODE: Stmts 637 */
+#line 15 "test.ceu"
+    {/* NODE: Nothing 740 */
 
 #line 15 "test.ceu"
-    {/* NODE: Nothing 742 */
-
-#line 15 "test.ceu"
-    }/* NODE: Nothing 743 */
+    }/* NODE: Nothing 741 */
+/* NODE: Nothing 742 */
+/* NODE: Nothing 743 */
 /* NODE: Nothing 744 */
 /* NODE: Nothing 745 */
 /* NODE: Nothing 746 */
-/* NODE: Nothing 747 */
-/* NODE: Nothing 748 */
-/* NODE: AwaitExt 588 */
+/* NODE: AwaitExt 586 */
 
-#line 220 "test.ceu"
+#line 214 "test.ceu"
         _ceu_go->trl->evt = CEU_IN_START;
-    _ceu_go->trl->lbl = Main_Awake_START_94;
+    _ceu_go->trl->lbl = Main_Awake_START_92;
 
-#line 220 "test.ceu"
+#line 214 "test.ceu"
     	return RET_HALT;
-#line 220 "test.ceu"
-    case Main_Awake_START_94:;
+#line 214 "test.ceu"
+    case Main_Awake_START_92:;
 
-#line 220 "test.ceu"
+#line 214 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Stmts 723 */
+/* NODE: Stmts 721 */
 
-#line 223 "test.ceu"
-    {/* NODE: Dcl_var 722 */
+#line 217 "test.ceu"
+    {/* NODE: Dcl_var 720 */
 
-#line 223 "test.ceu"
+#line 217 "test.ceu"
 /* start org: to_test */
-#line 223 "test.ceu"
+#line 217 "test.ceu"
     /* each org has its own trail on enclosing block */
 {
     int i;
     for (i=0; i<1; i++) {
         /* resets org memory and starts org.trail[0]=Class_XXX */
-        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_Main*)_ceu_go->org)->to_test)),9,Class_RulesTest,
+        ceu_out_org(_ceu_app, ((tceu_org*) (&((CEU_Main*)_ceu_go->org)->to_test)),8,Class_RulesTest,
                 _ceu_go->stki+1,    /* run now */
 #ifdef CEU_NEWS
                 0,
@@ -7383,63 +7307,63 @@ _ceu_go->org, 1);
  * are all together there. When we have separate trls for pools, we'll have to 
  * indirectly access the offset in the interface. */
 
-#line 223 "test.ceu"
+#line 217 "test.ceu"
         }
 }
 
-#line 223 "test.ceu"
+#line 217 "test.ceu"
     /* TODO: CEU_OS */
-    return ceu_out_org_spawn(_ceu_go, Main_Start_cnt_95,((tceu_org*) (&((CEU_Main*)_ceu_go->org)->to_test)),Class_RulesTest);
-case Main_Start_cnt_95:;
+    return ceu_out_org_spawn(_ceu_go, Main_Start_cnt_93,((tceu_org*) (&((CEU_Main*)_ceu_go->org)->to_test)),Class_RulesTest);
+case Main_Start_cnt_93:;
 
-#line 223 "test.ceu"
-    }/* NODE: AwaitInt 593 */
+#line 217 "test.ceu"
+    }/* NODE: AwaitInt 591 */
 
-#line 224 "test.ceu"
-    _CEU_NO_593_:
+#line 218 "test.ceu"
+    _CEU_NO_591_:
     _ceu_go->trl->evt = 2;
-    _ceu_go->trl->lbl = Main_Awake_ok_96;
+    _ceu_go->trl->lbl = Main_Awake_ok_94;
 
-#line 224 "test.ceu"
+#line 218 "test.ceu"
     	return RET_HALT;
-#line 224 "test.ceu"
-    case Main_Awake_ok_96:;
+#line 218 "test.ceu"
+    case Main_Awake_ok_94:;
 
-#line 224 "test.ceu"
+#line 218 "test.ceu"
     #ifdef CEU_ORGS
     if ((tceu_org*)(&((CEU_Main*)_ceu_go->org)->to_test) != _ceu_go->evto) {
         _ceu_go->trl->seqno = _ceu_app->seqno-1;   /* awake again */
-        goto _CEU_NO_593_;
+        goto _CEU_NO_591_;
     }
 #endif
 
-#line 224 "test.ceu"
+#line 218 "test.ceu"
     #ifdef CEU_DEBUG_TRAILS
 #ifndef CEU_OS
 fprintf(stderr, "\tOK!\n");
 #endif
 #endif
-/* NODE: Stmts 727 */
+/* NODE: Stmts 725 */
 
-#line 226 "test.ceu"
-    {/* NODE: SetExp 725 */
+#line 220 "test.ceu"
+    {/* NODE: SetExp 723 */
 
-#line 226 "test.ceu"
+#line 220 "test.ceu"
 /* SET: _ret */
-#line 226 "test.ceu"
+#line 220 "test.ceu"
     ((CEU_Main*)_ceu_go->org)->_ret_0 = 0;
-#line 226 "test.ceu"
+#line 220 "test.ceu"
     #ifdef CEU_RET
     _ceu_app->ret = ((CEU_Main*)_ceu_go->org)->_ret_0;
 #endif
-/* NODE: Escape 726 */
+/* NODE: Escape 724 */
 
-#line 226 "test.ceu"
-    _ceu_go->lbl = Main_Set_out_93;
+#line 220 "test.ceu"
+    _ceu_go->lbl = Main_Set_out_91;
 goto _CEU_GOTO_;
 /*return RET_GOTO;*/
 
-#line 226 "test.ceu"
+#line 220 "test.ceu"
     }
 #line 4 "test.ceu"
     }
@@ -7452,7 +7376,7 @@ goto _CEU_GOTO_;
 #line 1 "_ceu_cpp_test.ceu.in"
     	return RET_HALT;
 #line 1 "_ceu_cpp_test.ceu.in"
-case Main_Set_out_93:;
+case Main_Set_out_91:;
 #line 1 "_ceu_cpp_test.ceu.in"
 /* CLEAR: SetBlock (1) */
 #line 1 "_ceu_cpp_test.ceu.in"
@@ -7461,11 +7385,11 @@ case Main_Set_out_93:;
     tceu_trl* trl = &_ceu_go->org->trls[ 0 ];
     trl->evt = CEU_IN__STK;
     trl->stk = _ceu_go->stki;
-    trl->lbl = Main_Clear_98;
+    trl->lbl = Main_Clear_96;
 }
 return ceu_out_clear(_ceu_go, 1,                     &_ceu_go->org->trls[ 3 ]);
 
-case Main_Clear_98:;
+case Main_Clear_96:;
 
 #line 1 "_ceu_cpp_test.ceu.in"
     /* switch to 1st trail */
