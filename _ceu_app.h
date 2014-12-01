@@ -515,8 +515,8 @@ typedef struct {
 typedef void(*tceu_isr_f)(tceu_app* app, tceu_org* org);
 #endif
 
-void ceu_init      (void);
-int  ceu_scheduler (s32(*dt)());
+void ceu_os_init      (void);
+int  ceu_os_scheduler (int(*dt)());
 tceu_queue* ceu_sys_queue_nxt (void);
 void        ceu_sys_queue_rem (void);
 
@@ -586,9 +586,13 @@ extern void* CEU_SYS_VEC[CEU_SYS_MAX];
 #define CEU_IN_START 247
 #define CEU_IN_X_DONE 246
 #define CEU_IN_Y_DONE 245
+#define CEU_IN_TICK 244
 #define CEU_OUT_n 0
       /* CEU_IN_, CEU_OUT_ */
+#define CEU_FUN_assert
 #define CEU_FUN_move_y
+#define CEU_FUN_cancel_x
+#define CEU_FUN_cancel_y
 #define CEU_FUN_move_x
 #define CEU_FUN_printf
 #define CEU_FUN_y

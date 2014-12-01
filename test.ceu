@@ -5,13 +5,16 @@ native _x();
 native _y();
 native _move_x();
 native _move_y();
+native _cancel_x();
+native _cancel_y();
+native _assert();
 
 input void START;
 input void X_DONE;
 input void Y_DONE;
+input void TICK;
 
 interface Executor with
-  event void go;
   event void ok;
 end
 
@@ -19,7 +22,6 @@ class MoveX with
   interface Executor;
   var int distance;
 do
-  await this.go;
   _printf("move x %d starting\n", this.distance);
   _move_x(this.distance);
   await X_DONE;
@@ -31,7 +33,6 @@ class MoveY with
   interface Executor;
   var int distance;
 do
-  await this.go;
   _printf("move y %d starting\n", this.distance);
   _move_y(this.distance);
   await Y_DONE;
@@ -42,28 +43,22 @@ end
 class BoxTest with
   interface Executor;
 do
+  _printf("boxtest starting\n");
   var MoveX right with
     this.distance = 10;
   end;
+  await right.ok;
   var MoveY down with
     this.distance = 10;
   end;
+  await down.ok;
   var MoveX left with
     this.distance = -10;
   end;
+  await left.ok;
   var MoveY up with
     this.distance = -10;
   end;
-
-  await this.go;
-  _printf("boxtest starting\n");
-  emit right.go;
-  await right.ok;
-  emit down.go;
-  await down.ok;
-  emit left.go;
-  await left.ok;
-  emit up.go;
   await up.ok;
   _printf("boxtest done\n");
   emit this.ok;
@@ -72,33 +67,27 @@ end;
 class DiagonalTest with
   interface Executor;
 do
-  var MoveX right with
-    this.distance = 20;
-  end;
-  var MoveY down with
-    this.distance = 20;
-  end;
-  var MoveX left with
-    this.distance = -20;
-  end;
-  var MoveY up with
-    this.distance = -20;
-  end;
-
-  await this.go;
   _printf("diagonaltest starting\n");
   par/and do
-    emit right.go;
+    var MoveX right with
+      this.distance = 20;
+    end;
     await right.ok;
   with
-    emit down.go;
+    var MoveY down with
+      this.distance = 20;
+    end;
     await down.ok;
   end
   par/and do
-    emit left.go;
+    var MoveX left with
+      this.distance = -20;
+    end;
     await left.ok;
   with
-    emit up.go;
+    var MoveY up with
+      this.distance = -20;
+    end;
     await up.ok;
   end
   _printf("diagonaltest done\n");
@@ -108,48 +97,130 @@ end
 class RulesTest with
   interface Executor;
 do
-  var MoveX right with
-    this.distance = 30;
-  end;
-  var MoveY down with
-    this.distance = 30;
-  end;
-  var MoveX left with
-    this.distance = -30;
-  end;
-  var MoveY up with
-    this.distance = -30;
-  end;
-
-  await this.go;
   _printf("rulestest starting\n");
   loop do
     if _x() < 30 then
-      emit right.go;
-      await right.ok;
-    else/if _x() > 30 then
-      emit left.go;
-      await left.ok;
-    else/if _y() < 30 then
-      emit down.go;
-      await down.ok;
-    else/if _y() > 30 then
-      emit up.go;
-      await up.ok;
+      _printf("rulestest starting right\n");
+      var MoveX right with
+        this.distance = 30 - _x();
+      end;
+      finalize with
+        _cancel_x(); // TODO: call right.cancel?
+      end
+      
+      par/or do
+        every TICK do
+          if _x() >= 30 then
+            _printf("right disqualified\n");
+            break;
+          end
+        end
+      with
+        await right.ok;
+      end
     else
-      break;
+      par/or do
+        every TICK do
+          if _x() < 30 then
+            _printf("right preempts\n");
+            break;
+          end
+        end
+      with
+        if _x() > 30 then
+          _printf("rulestest starting left\n");
+          var MoveX left with
+            this.distance = 30 - _x();
+          end;
+          finalize with
+            _cancel_x(); // TODO: call left.cancel?
+          end
+
+          par/or do
+            every TICK do
+              if _x() <= 30 then
+                _printf("left disqualified\n");
+                break;
+              end
+            end
+          with
+            await left.ok;
+          end
+        else
+          par/or do
+            every TICK do
+              if _x() > 30 then
+                _printf("left preempts\n");
+                break;
+              end
+            end
+          with
+            if _y() < 30 then
+              _printf("rulestest starting down\n");
+              var MoveY down with
+                this.distance = 30 - _y();
+              end;
+              finalize with
+                _cancel_y();
+              end
+              par/or do
+                every TICK do
+                  if _y() >= 30 then
+                    _printf("down disqualified\n");
+                    break;
+                  end
+                end
+              with
+                await down.ok;
+              end
+            else
+              par/or do
+                every TICK do
+                  if _y() < 30 then
+                    _printf("down preempts\n");
+                    break;
+                  end
+                end
+              with
+                if _y() > 30 then
+                  _printf("rulestest starting up\n");
+                  var MoveY up with
+                    this.distance = 30 - _y();
+                  end;
+                  finalize with
+                    _cancel_y();
+                  end
+                  par/or do
+                    every TICK do
+                      if _y() <= 30 then
+                        _printf("up disqualified\n");
+                        break;
+                      end
+                    end
+                  with
+                    await up.ok;
+                  end
+                else
+                  break;
+                end
+              end
+            end
+          end
+        end
+      end
     end
   end
+  _assert(_x() == 30);
+  _assert(_y() == 30);
   _printf("rulestest done\n");
   emit this.ok;
 end
 
 
+await START;
 // var BoxTest to_test;
 // var DiagonalTest to_test;
 var RulesTest to_test;
-await START;
-emit to_test.go;
 await to_test.ok;
 
 escape 0;

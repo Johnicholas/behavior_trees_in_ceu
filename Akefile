@@ -3,3 +3,9 @@ main: main.c _ceu_app.c _ceu_app.h ceu_types.h
 
 _ceu_app.c: test.ceu
 	ceu test.ceu
+
+_ceu_app.h: test.ceu
+	ceu test.ceu
+
+clean:
+	rm main _ceu_app.c _ceu_app.h
