@@ -45,7 +45,7 @@ void possibly_teleport() {
   if (rand() % 10 == 9) {
     x_coord = rand() % 60;
     y_coord = rand() % 60; 
-    // printf("randomly teleported to %d, %d\n", x_coord, y_coord);
+    printf("randomly teleported to %d, %d\n", x_coord, y_coord);
   }
 }
 
@@ -71,33 +71,31 @@ int main (int argc, char *argv[])
       if (moving_in_x) {
         if (x_coord < x_target) {
           x_coord += 1;
-          possibly_teleport();
         } else if (x_coord > x_target) {
           x_coord -= 1;
-          possibly_teleport();
-        } else {
-          assert(x_coord == x_target);
+        }
+        possibly_teleport();
+        if (x_coord == x_target) {
           moving_in_x = 0;
-          // printf("x done\n");
           ceu_sys_go(&app, CEU_IN_X_DONE, (tceu_evtp)0);
+        } else {
+          ceu_sys_go(&app, CEU_IN_TICK, (tceu_evtp)0);
         }
       }
       if (moving_in_y) {
         if (y_coord < y_target) {
           y_coord += 1;
-          possibly_teleport();
         } else if (y_coord > y_target) {
           y_coord -= 1;
-          possibly_teleport();
-        } else {
-          assert(y_coord == y_target);
+        }
+        possibly_teleport();
+        if (y_coord == y_target) {
           moving_in_y = 0;
-          // printf("y done\n");
           ceu_sys_go(&app, CEU_IN_Y_DONE, (tceu_evtp)0);
+        } else {
+          ceu_sys_go(&app, CEU_IN_TICK, (tceu_evtp)0);
         }
       }
-      // printf("tick\n");
-      ceu_sys_go(&app, CEU_IN_TICK, (tceu_evtp)0);
     }
 
     return 0;

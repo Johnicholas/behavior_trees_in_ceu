@@ -22,14 +22,18 @@ class MoveX with
   interface Executor;
   var int distance;
 do
+  var bool cancel = true;
   finalize with
-    _printf("move x %d canceled\n", this.distance);
-    _cancel_x();
+    if cancel then
+      _printf("move x %d canceled\n", this.distance);
+      _cancel_x();
+    end
   end;
   _printf("move x %d starting\n", this.distance);
   _move_x(this.distance);
   await X_DONE;
   _printf("move x %d done\n", this.distance);
+  cancel = false;
   emit this.ok;
 end
 
@@ -37,14 +41,18 @@ class MoveY with
   interface Executor;
   var int distance;
 do
+  var bool cancel = true;
   finalize with
-    _printf("move y %d canceled\n", this.distance);
-    _cancel_y();
+    if cancel then
+      _printf("move y %d canceled\n", this.distance);
+      _cancel_y();
+    end
   end;
   _printf("move y %d starting\n", this.distance);
   _move_y(this.distance);
   await Y_DONE;
   _printf("move y %d done\n", this.distance);
+  cancel = false;
   emit this.ok;
 end
 
@@ -113,14 +121,14 @@ do
         this.distance = 30 - _x();
       end;
       par/or do
+        await right.ok;
+      with
         every TICK do
           if _x() >= 30 then
             _printf("right disqualified\n");
             break;
           end
         end
-      with
-        await right.ok;
       end
     else
       par/or do
@@ -137,14 +145,14 @@ do
             this.distance = 30 - _x();
           end;
           par/or do
+            await left.ok;
+          with
             every TICK do
               if _x() <= 30 then
                 _printf("left disqualified\n");
                 break;
               end
             end
-          with
-            await left.ok;
           end
         else
           par/or do
@@ -161,14 +169,14 @@ do
                 this.distance = 30 - _y();
               end;
               par/or do
+                await down.ok;
+              with
                 every TICK do
                   if _y() >= 30 then
                     _printf("down disqualified\n");
                     break;
                   end
                 end
-              with
-                await down.ok;
               end
             else
               par/or do
@@ -185,14 +193,14 @@ do
                     this.distance = 30 - _y();
                   end;
                   par/or do
+                    await up.ok;
+                  with
                     every TICK do
                       if _y() <= 30 then
                         _printf("up disqualified\n");
                         break;
                       end
                     end
-                  with
-                    await up.ok;
                   end
                 else
                   break;
