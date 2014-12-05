@@ -110,106 +110,185 @@ do
   emit this.ok;
 end
 
+class Halfplane with
+  interface Executor;
+  var int xcoeff;
+  var int ycoeff;
+  var int offset;
+do
+  every TICK do
+    if _x() * this.xcoeff + _y() * this.ycoeff < offset then
+      emit this.ok;
+    end
+  end
+end
+
+class Skip with
+  interface Executor;
+do
+  emit this.ok;
+end
+
+class Quux with
+  interface Executor;
+do
+  if _y() > 30 then
+    par/or do
+      _printf("Quux starting up\n");
+      var MoveY up with
+        this.distance = _y() - 30;
+      end;
+      await up.ok;
+      _printf("Quux done up\n");
+    with
+      var Halfplane guard with
+        this.xcoeff = 0;
+        this.ycoeff = 1;
+        this.offset = 31;
+      end;
+      await guard.ok;
+      _printf("Quux up disqualified\n");
+    end
+  else
+    par/or do
+      var Halfplane guard with
+        this.xcoeff = 0;
+        this.ycoeff = 1;
+        this.offset = 30;
+      end;
+      await guard.ok;
+      _printf("Quux up preempts\n");
+    with
+      var Skip default;
+      await default.ok;
+    end
+  end
+  emit this.ok;
+end
+
+class Qux with
+  interface Executor;
+do
+  if _y() < 30 then
+    par/or do
+      _printf("Qux starting down\n");
+      var MoveY move with
+        this.distance = 30 - _y();
+      end;
+      await move.ok;
+      _printf("Qux done down\n");
+    with
+      var Halfplane guard with
+        this.xcoeff = 0;
+        this.ycoeff = 1;
+        this.offset = 30;
+      end;
+      await guard.ok;
+      _printf("Qux down disqualified\n");
+    end
+  else
+    par/or do
+      var Halfplane guard with
+        this.xcoeff = 0;
+        this.ycoeff = 1;
+        this.offset = 29;
+      end;
+      await guard.ok;
+      _printf("Qux down preempts\n");
+    with
+      var Quux default;
+      await default.ok;
+    end
+  end
+  emit this.ok;
+end
+
+
+class Bar with
+  interface Executor;
+do
+  if _x() > 30 then
+    par/or do
+      _printf("Bar starting left\n");
+      var MoveX move with
+        this.distance = 30 - _x();
+      end;
+      await move.ok;
+      _printf("Bar done left\n");
+    with
+      var Halfplane guard with
+        this.xcoeff = 1;
+        this.ycoeff = 0;
+        this.offset = 31;
+      end;
+      await guard.ok;
+      _printf("Bar left disqualified\n");
+    end
+  else
+    par/or do
+      var Halfplane guard with
+        this.xcoeff = 1;
+        this.ycoeff = 0;
+        this.offset = 30;
+      end;
+      await guard.ok;
+      _printf("Bar left preempts\n");
+    with
+      var Qux default;
+      await default.ok;
+    end
+  end
+  emit this.ok;
+end
+
+class Foo with
+  interface Executor;
+do
+  if _x() < 30 then
+    par/or do
+      _printf("Foo right starts\n");
+      var MoveX go_right with
+        this.distance = 30 - _x();
+      end;
+      await go_right.ok;
+      _printf("Foo right done\n");
+    with
+      var Halfplane guard with
+        this.xcoeff = -1;
+        this.ycoeff = 0;
+        this.offset = -29;
+      end;
+      await guard.ok;
+      _printf("Foo right disqualified\n");
+    end
+  else
+    par/or do
+      var Halfplane guard with
+        this.xcoeff = 1;
+        this.ycoeff = 0;
+        this.offset = 30;
+      end;
+      await guard.ok;
+      _printf("Foo right preempts\n");
+    with
+      var Bar default;
+      await default.ok;
+    end
+  end
+  emit this.ok;
+end
+
 class RulesTest with
   interface Executor;
 do
   _printf("rulestest starting\n");
   loop do
-    if _x() < 30 then
-      _printf("rulestest starting right\n");
-      var MoveX right with
-        this.distance = 30 - _x();
-      end;
-      par/or do
-        await right.ok;
-      with
-        every TICK do
-          if _x() >= 30 then
-            _printf("right disqualified\n");
-            break;
-          end
-        end
-      end
+    _printf("top of rulestest loop\n");
+    if _x() == 30 and _y() == 30 then
+      break;
     else
-      par/or do
-        every TICK do
-          if _x() < 30 then
-            _printf("right preempts\n");
-            break;
-          end
-        end
-      with
-        if _x() > 30 then
-          _printf("rulestest starting left\n");
-          var MoveX left with
-            this.distance = 30 - _x();
-          end;
-          par/or do
-            await left.ok;
-          with
-            every TICK do
-              if _x() <= 30 then
-                _printf("left disqualified\n");
-                break;
-              end
-            end
-          end
-        else
-          par/or do
-            every TICK do
-              if _x() > 30 then
-                _printf("left preempts\n");
-                break;
-              end
-            end
-          with
-            if _y() < 30 then
-              _printf("rulestest starting down\n");
-              var MoveY down with
-                this.distance = 30 - _y();
-              end;
-              par/or do
-                await down.ok;
-              with
-                every TICK do
-                  if _y() >= 30 then
-                    _printf("down disqualified\n");
-                    break;
-                  end
-                end
-              end
-            else
-              par/or do
-                every TICK do
-                  if _y() < 30 then
-                    _printf("down preempts\n");
-                    break;
-                  end
-                end
-              with
-                if _y() > 30 then
-                  _printf("rulestest starting up\n");
-                  var MoveY up with
-                    this.distance = 30 - _y();
-                  end;
-                  par/or do
-                    await up.ok;
-                  with
-                    every TICK do
-                      if _y() <= 30 then
-                        _printf("up disqualified\n");
-                        break;
-                      end
-                    end
-                  end
-                else
-                  break;
-                end
-              end
-            end
-          end
-        end
-      end
+      var Foo body;
+      await body.ok;
     end
   end
   _assert(_x() == 30);

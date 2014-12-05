@@ -43,8 +43,12 @@ extern void ceu_app_init (tceu_app* app);
 
 void possibly_teleport() {
   if (rand() % 10 == 9) {
-    x_coord = rand() % 60;
-    y_coord = rand() % 60; 
+    int new_x_coord = rand() % 60;
+    int new_y_coord = rand() % 60;
+    x_target += new_x_coord - x_coord;
+    y_target += new_y_coord - y_coord;
+    x_coord = new_x_coord;
+    y_coord = new_y_coord;
     printf("randomly teleported to %d, %d\n", x_coord, y_coord);
   }
 }
@@ -62,12 +66,6 @@ int main (int argc, char *argv[])
     app.init(&app);
     ceu_sys_go(&app, CEU_IN_START, (tceu_evtp)0);
     while (app.isAlive) {
-      /*
-      printf("top of loop x=%d(%d%s), y=%d(%d%s)\n",
-	x_coord, x_target, moving_in_x ? ", moving" : "",
-	y_coord, y_target, moving_in_y ? ", moving" : ""
-      );
-      */
       if (moving_in_x) {
         if (x_coord < x_target) {
           x_coord += 1;

@@ -14,7 +14,7 @@
 
 /* TODO: lbl => unsigned */
 #ifndef CEU_OS
-typedef s8 tceu_nlbl;
+typedef s16 tceu_nlbl;
 #endif
 
 #ifdef CEU_IFCS
